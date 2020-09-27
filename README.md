@@ -11,6 +11,7 @@
 |first_name|string|null:false|
 |last_name|string|null:false|
 |first_name_kana|string|null:false|
+|last_name_kana|string|null:false|
 |birthday|date|null:false|
 ### Association
 - has_one :creditcard
@@ -28,7 +29,7 @@
 |house_number|string||
 |building|string||
 |phone_number|string||
-|user-id|string|null:false,foreign_key:true|
+|user_id|string|null:false,foreign_key:true|
 ### Association
 - belongs_to :user
 
@@ -65,7 +66,7 @@
 |user_id|reference|null:false,foreign_key:true|
 ### Association
 - belongs_to :user
-- belongs_to :products
+- belongs_to :product
 
 ## productsテーブル
 |Column|Type|options|
@@ -93,14 +94,14 @@
 |image|string|null:false|
 |product_id|reference|null:false,foreign_key:true|
 ### Association
-- belongs_to :products
+- belongs_to :product
 
 ## brands
 |Column|Type|options|
 |------|----|-------|
 |name|string|null:false|
 ### Association
-- belongs_to :products
+- belongs_to :product
 
 ## categoriesテーブル
 |Column|Type|options|
