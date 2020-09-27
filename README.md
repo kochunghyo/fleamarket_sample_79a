@@ -29,7 +29,7 @@
 |house_number|string||
 |building|string||
 |phone_number|string||
-|user_id|string|null:false,foreign_key:true|
+|user_id|reference|null:false,foreign_key:true|
 ### Association
 - belongs_to :user
 
