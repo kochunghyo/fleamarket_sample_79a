@@ -23,12 +23,12 @@
 ## user_informationテーブル
 |Column|Type|options|
 |------|----|-------|
-|post_code|string||
-|prefectures|string||
-|city|string||
-|house_number|string||
-|building|string||
-|phone_number|string||
+|post_code|string|null:false|
+|prefectures|string|null:false|
+|city|string|null:false|
+|house_number|string|null:false|
+|building|string|null:false|
+|phone_number|string|null:false|
 |user_id|reference|null:false,foreign_key:true|
 ### Association
 - belongs_to :user
