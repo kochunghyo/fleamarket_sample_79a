@@ -1,0 +1,259 @@
+.body
+  .body__top_theme
+    .body__top_theme__content
+      %h2.body__top_theme__content__title
+        人生を変えるフリマアプリ
+      %p.body__top_theme__content__text
+        FURIMAはだれでもかんたんに出品・購入できる
+        %br
+          フリマアプリです
+      .body__top_theme__content__btn
+        = link_to '#', class: "body__top_theme__content__btn__aBtn" do
+          = image_tag("/assets/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg", class: "body__top_theme__content__btn__aBtn")
+        = link_to '#', class: "body__top_theme__content__btn__gBtn" do
+          = image_tag("/assets/google-play-badge.png", class: "body__top_theme__content__btn__gBtn")
+    .body__top_theme__picture
+    
+  .body__top_reason
+    %h2.body__top_reason__title
+      FURIMAが選ばれる３つの理由
+    %ul.body__top_reason__lists
+      %li.body__top_reason__lists__list
+        .body__top_reason__lists__list__picture
+          %span.body__top_reason__lists__list__picture__number 1
+          = image_tag("pict-reason-01.jpg", alt: "理由①" , class: "img")
+        %h3.body__top_reason__lists__list__content
+          %span.body__top_reason__lists__content 3分
+          ですぐに出品
+        %p.body__top_reason__lists__list__feature
+        スマホで入力するだけで簡単に出品できる!
+      %li.body__top_reason__lists__list
+        .body__top_reason__lists__list__picture
+          %span.body__top_reason__lists__list__picture__number 2
+          = image_tag("pict-reason-02.jpg", alt: "理由②" , class: "img")
+        %h3.body__top_reason__lists__list__content
+          %span.body__top_reason__lists__list__content シンプル
+          で使いやすい
+        %p.body__top_reason__lists__list__feature
+        めんどくさい入力は必要なく、検索も購入もスムーズ！
+        
+      %li.body__top_reason__lists__list--last
+        .body__top_reason__lists__list__picture
+          %span.body__top_reason__lists__list__picture__number 3
+          = image_tag("pict-reason-03.jpg", alt: "理由③" , class: "img")
+        %h3.body__top_reason__lists__list__content
+          手数料
+          %span.body__top_reason__lists__list__content 業界最安
+        %p.body__top_reason__lists__list__feature
+        最大3%でお得に出品＆購入！
+
+  .body__middle
+    .body__middle__content
+      %h2.body__middle__content__title 会員数日本一位
+      %p.body__middle__content__text
+        FURIMAは、フリマアプリで最も人気。
+        %br
+        出品・購入回数も業界最多です！
+        %br
+        ほしかったあの商品に出会えるかもしれません。
+      .body__middle__content__btn 
+        = link_to '#' , class: "body__middle__content__btn__link" do
+          = image_tag("/assets/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg", class: "body__middle__content__btn__link__abtn")
+        = link_to '#' , class: "body__middle__content__btn__link" do
+          = image_tag("/assets/google-play-badge.png", class: "body__middle__content__btn__link__gbtn")
+
+
+  .body__features
+    %h2.body__features__head
+      FURIMAの特徴
+    .body__features__contents
+      .body__features__contents__content
+        .body__features__contents__content__img
+        = image_tag("icon-01.png", alt: "特徴1" , class: "img")
+        %h3.body__features__contents__content__title 
+          簡単に売り買いできる
+        %p.body__features__contents__content__text
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      .body__features__contents__content
+        .body__features__contents__content__img
+        = image_tag("icon-03.png", alt: "特徴2" , class: "img")
+        %h3.body__features__contents__content__title
+          売上金は即日振り込みに対応
+        %p.body__features__contents__content__text
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします！
+      .body__features__contents__content
+        .body__features__contents__content__img
+        = image_tag("icon-04.png", alt: "特徴3" , class: "img")
+        %h3.body__features__contents__content__title
+          様々な支払いに対応
+        %p.body__features__contents__content__text
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+
+  .body__pickup_container
+    %h2.body__pickup_container__head
+      ピックアップカテゴリー
+    .body__pickup_container__products
+      .body__pickup_container__products__head
+        = link_to '#', class: "body__pickup_container__products__head__link" do
+          %h3.body__pickup_container__products__head__link__title 新規投稿商品
+      .body__pickup_container__products__lists
+        .body__pickup_container__products__lists__list
+          = link_to '#', class: "body__pickup_container__products__lists__list__link" do
+            .body__pickup_container__products__lists__list__img
+              %img
+            .body__pickup_container__products__lists__list__content
+              %h3.body__pickup_container__products__lists__list__content__name
+                テスト
+              .body__pickup_container__products__lists__list__content__detail
+                %ul
+                  %li 10000円
+                  %li 
+                    = icon('fas','star',class: "i")
+                    1
+                %p (税込)
+        .body__pickup_container__products__lists__list
+          = link_to '#', class: "body__pickup_container__products__lists__list__link" do
+            .body__pickup_container__products__lists__list__img
+              %img
+            .body__pickup_container__products__lists__list__content
+              %h3.body__pickup_container__products__lists__list__content__name
+                ee
+              .body__pickup_container__products__lists__list__content__detail
+                %ul
+                  %li 1000円
+                  %li
+                    = icon('fas','star',class: "i")
+                    4
+                %p (税込)
+        .body__pickup_container__products__lists__list
+          = link_to '#', class: "body__pickup_container__products__lists__list__link" do
+            .body__pickup_container__products__lists__list__img
+              %img
+            .body__pickup_container__products__lists__list__content
+              %h3.body__pickup_container__products__lists__list__content__name
+                product3
+              .body__pickup_container__products__lists__list__content__detail
+                %ul
+                  %li 30000円
+                  %li
+                    = icon('fas','star',class: "i")
+                    1
+                %p (税込)
+        .body__pickup_container__products__lists__list
+          = link_to '#', class: "body__pickup_container__products__lists__list__link" do
+            .body__pickup_container__products__lists__list__img
+              %img
+            .body__pickup_container__products__lists__list__content
+              %h3.body__pickup_container__products__lists__list__content__name
+                product2
+              .body__pickup_container__products__lists__list__content__detail
+                %ul
+                  %li 20000円
+                  %li
+                    = icon('fas','star',class: "i")
+                    0
+                %p (税込)
+        .body__pickup_container__products__lists__list
+          = link_to '#', class: "body__pickup_container__products__lists__list__link" do
+            .body__pickup_container__products__lists__list__img
+              %img
+            .body__pickup_container__products__lists__list__content
+              %h3.body__pickup_container__products__lists__list__content__name
+                product1
+              .body__pickup_container__products__lists__list__content__detail
+                %ul
+                  %li 10000円
+                  %li
+                    = icon('fas','star',class: "i")
+                    1
+                %p (税込)
+  .body__pickup_container
+    %h2.body__pickup_container__head
+      ピックアップブランド
+    .body__pickup_container__products
+      .body__pickup_container__products__head
+        = link_to '#', class: "body__pickup_container__products__head__link" do
+          %h3.body__pickup_container__products__head__link__title アーカイバ
+      .body__pickup_container__products__lists
+        .body__pickup_container__products__lists__list
+          = link_to '#', class: "body__pickup_container__products__lists__list__link" do
+            .body__pickup_container__products__lists__list__img
+              %img
+            .body__pickup_container__products__lists__list__content
+              %h3.body__pickup_container__products__lists__list__content__name
+                テスト
+              .body__pickup_container__products__lists__list__content__detail
+                %ul
+                  %li 10000円
+                  %li
+                    = icon('fas','star',class: "i")
+                    1
+                %p (税込)
+        .body__pickup_container__products__lists__list
+          = link_to '#', class: "body__pickup_container__products__lists__list__link" do
+            .body__pickup_container__products__lists__list__img
+              %img
+            .body__pickup_container__products__lists__list__content
+              %h3.body__pickup_container__products__lists__list__content__name
+                ee
+              .body__pickup_container__products__lists__list__content__detail
+                %ul
+                  %li 1000円
+                  %li
+                    = icon('fas','star',class: "i")
+                    4
+                %p (税込)   
+        .body__pickup_container__products__lists__list
+          = link_to '#', class: "body__pickup_container__products__lists__list__link" do
+            .body__pickup_container__products__lists__list__img
+              %img
+            .body__pickup_container__products__lists__list__content
+              %h3.body__pickup_container__products__lists__list__content__name
+                product3
+              .body__pickup_container__products__lists__list__content__detail
+                %ul
+                  %li 30000円
+                  %li
+                    = icon('fas','star',class: "i")
+                    1
+                %p (税込)
+        .body__pickup_container__products__lists__list
+          = link_to '#', class: "body__pickup_container__products__lists__list__link" do
+            .body__pickup_container__products__lists__list__img
+              %img
+            .body__pickup_container__products__lists__list__content
+              %h3.body__pickup_container__products__lists__list__content__name
+                product2
+              .body__pickup_container__products__lists__list__content__detail
+                %ul
+                  %li 20000円
+                  %li
+                    = icon('fas','star',class: "i")
+                    0
+                %p (税込)
+        .body__pickup_container__products__lists__list
+          = link_to '#', class: "body__pickup_container__products__lists__list__link" do
+            .body__pickup_container__products__lists__list__img
+              %img
+            .body__pickup_container__products__lists__list__content
+              %h3.body__pickup_container__products__lists__list__content__name
+                product1
+              .body__pickup_container__products__lists__list__content__detail
+                %ul
+                  %li 10000円
+                  %li
+                    = icon('fas','star',class: "i")
+                    1
+                %p (税込)
+
+.appbanner
+  .appbanner__internal
+    %h2.appbanner__internal__title
+      だれでもかんたん、人生を変えるフリマアプリ
+    %p.appbanner__internal__text
+      今すぐ無料ダウンロード！
+    .appbanner__internal__icon
+      = link_to '#' do
+        = image_tag("/assets/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg", class: "appbanner__internal__icon__abtn")
+      = link_to '#' do
+        = image_tag("/assets/google-play-badge.png", class: "appbanner__internal__icon__gbtn")
