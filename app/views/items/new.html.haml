@@ -2,11 +2,13 @@
   %nav.category
     %ul
       %li
-        %a{:href => "/"} テスト
+        = link_to "#" , class: "category_link" do
+          テスト
       %li
         = icon('fas','angle-right',class: "i")
       %li
-        %a{:href => "/"} テスト
+        = link_to "#" , class: "category_link" do
+          テスト
   .main
     .main_content
       .main_content_left
@@ -18,14 +20,14 @@
             .item_box_body
               %ul
                 %li
-                  %img{:src => "https://pro-foto.jp/free/img/images_big/yos0006-001.jpg"}/
+                  = image_tag("https://pro-foto.jp/free/img/images_big/yos0006-001.jpg" , class: "item_box_img")
                   %ul
                     %li
-                      %img{:src => "https://pro-foto.jp/free/img/images_big/yos0002-001.jpg"}/
+                      = image_tag("https://pro-foto.jp/free/img/images_big/yos0002-001.jpg" , class: "iten_box_img")
                     %li
-                      %img{:src => "https://pro-foto.jp/free/img/images_big/yos0031-054.jpg"}/
+                      = image_tag("https://pro-foto.jp/free/img/images_big/yos0031-054.jpg" , class: "item_box_img")
                     %li
-                      %img{:src => "https://pro-foto.jp/free/img/images_big/kid0103-001.jpg"}/
+                      = image_tag("https://pro-foto.jp/free/img/images_big/kid0103-001.jpg" , class: "item_box_img")
             .item_box_price
               %span ¥30000
               .item_box_price-detail
@@ -41,9 +43,10 @@
                   %tr
                     %th カテゴリー
                     %td
-                      %a{:href => "#"} ベビー
-                      %a{:href => "#"}
-                      %a{:href => "#"}
+                      = link_to "#" , class: "item_box_table_link" do
+                        ベビー
+                      = link_to "#" , class: "item_box_table_link" do
+                        アウター
                   %tr
                     %th ブランド
                     %td
@@ -59,50 +62,52 @@
                   %tr
                     %th 発送元の地域
                     %td
-                      %a{:href => "#"}
+                      = link_to "#" , class: "item_box_table_link" do
+                        岩手県
                   %tr
                     %th 発送日の目安
                     %td
             .item_box_optional_area
               %ul
                 %li.optional_area_btn
-                  = icon('fas','star',class: "i") 
+                  = icon('fas','star',class: "i")
                   お気に入り 1
               %ul.optional
                 %li.optional_btn
-                  %a{:href => "#"}
+                  = link_to "#" , class: "optional_btn_link" do
                     = icon('fas','flag',class: "i")
                     不適切な商品の通報
           .comment_box
             %ul.comment_box_contents
-            %form.new_comment
-              %textarea{:type => "text"}
-              %p.notice_message
-                相手のことを考え丁寧なコメントを心がけましょう。
-                %br/
-                不快な言葉遣いなどは利用制限や退会処分となることがあります。
-              %br
-              %button{:name => "button"}
-                = icon('fas','comment',class: "i")
-                コメントする
+              = form_with class: "new_comment" do |f|
+                = f.text_area :content
+                %p.notice_message
+                  相手のことを考え丁寧なコメントを心がけましょう。
+                  %br/
+                  不快な言葉遣いなどは利用制限や退会処分となることがあります。
+                %br
+                = button_tag type: "submit" , class: "new_comment_btn" do
+                  コメントする
+                  = icon('fas','comment',class: "i")
         %ul.links
           %li
-            %a{:href => "#"}
-              = icon('fas','angle-left',class: "i")
-              %span
-                前の商品
+          = link_to "#" , class: "links_link" do
+            = icon('fas','angle-left',class: "i")
+            %span
+              前の商品
           %li
-            %a{:href => "#"}
+            = link_to "#" , class: "links_link" do
               %span
                 後ろの商品
               = icon('fas','angle-right',class: "i")
         .related_items
-          %a{:href => "#"} ベビー・キッズをもっと見る
+          = link_to "#" , class: "related_items_link" do
+            ベビー・キッズをもっと見る
           .product_lists
             .product_list
-              %a{:href => "#"}
+              = link_to "#" , class: "product_list_link" do
                 %figure.product_list_image
-                  %img{:src => "https://pro-foto.jp/free/img/images_big/yos0034-054.jpg"}/
+                  = image_tag("https://pro-foto.jp/free/img/images_big/yos0034-054.jpg" , class: "product_list_image_img")
                 .product_list_body
                   %h3.product_name ee
                   .details
