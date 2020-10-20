@@ -38,6 +38,8 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -65,3 +67,7 @@ group :production do
 end
 
 gem "haml-rails", ">= 1.0", '<= 2.0.1'
+gem 'devise'
+gem 'active_hash'
+gem 'rails-i18n'
+gem 'pry-rails'
