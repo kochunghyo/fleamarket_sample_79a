@@ -16,27 +16,13 @@
 ### Association
 - has_one :creditcard
 - has_many :orders
-- has_one :user_information
 - has_one :address
 - has_many :products
-
-## user_informationテーブル
-|Column|Type|options|
-|------|----|-------|
-|post_code|string|null:false|
-|prefectures|string|null:false|
-|city|string|null:false|
-|house_number|string|null:false|
-|building|string|ー|
-|phone_number|string|null:false|
-|user_id|reference|null:false,foreign_key:true|
-### Association
-- belongs_to :user
 
 ## creditcardテーブル
 |Column|Type|options|
 |------|----|-------|
-|user_id|reference|null:false,foreign_key:true|
+|user_id|references|null:false,foreign_key:true|
 |customer_id|string|null:false|
 |card_id|string|null:false|
 ### Association
@@ -50,14 +36,14 @@
 |first_name_kana|string|null:false|
 |last_name_kana|string|null:false|
 |post_code|string|null:false|
-|prefectures|string|null:false|
+|prefectures|references|null:false,foreign_key:true|
 |city|string|null:false|
 |house_number|string|null:false|
 |building|string||
-|phone_number|string||
-|user_id|reference|null:false,foreign_key:true|
+|phone_number|string||null:false|
+|user_id|references|null:false,foreign_key:true|
 ### Association
-- belongs_to :user
+- belongs_to_active_hash :prefecture
 
 ## ordersテーブル
 |Column|Type|options|
@@ -73,10 +59,10 @@
 |------|----|-------|
 |name|string|null:false|
 |explanation|text|null:false|
-|status|string|null:false|
-|delivery_fee|string|null:false|
-|shipping_area|string|null:false|
-|shipping_day|integer|null:false|
+|status|references|null:false,foreign_key:true|
+|delivery_fee|references|null:false,foreign_key:true|
+|shipping_area|references|null:false,foreign_key:true|
+|shipping_day|references|null:false,foreign_key:true|
 |price|integer|null:false|
 |user_id|reference|null:false,foreign_key:true|
 |category_id|reference|null:false,foreign_key:true|
@@ -84,9 +70,14 @@
 ### Association
 - belongs_to :user
 - belongs_to :category
+- belongs_to :brand
 - has_many :images
-- has_one :brand
 - has_one :order
+- belongs_to_active_hash :status
+- belongs_to_active_hash :delivery_fee
+- belongs_to_active_hash :shipping_area
+- belongs_to_active_hash :shipping_day
+
 
 ## imagesテーブル
 |Column|Type|options|
@@ -101,7 +92,7 @@
 |------|----|-------|
 |name|string|null:false|
 ### Association
-- belongs_to :product
+- has_one :product
 
 ## categoriesテーブル
 |Column|Type|options|
