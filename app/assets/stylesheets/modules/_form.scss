@@ -345,6 +345,10 @@
   }
   .caution {
     padding: 5vh 0;
+    &_action {
+      color: #0099e8;
+      text-decoration: none;
+    }
   }
   .selling-system {
     width: 100%;
@@ -359,6 +363,7 @@
       font-size: 14px;
       margin-bottom: 4vh;
       display: block;
+      text-decoration: none;
     }
     &_draft {
       background: #aaa;
