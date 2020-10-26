@@ -48,8 +48,8 @@
 ## ordersテーブル
 |Column|Type|options|
 |------|----|-------|
-|product_id|reference|null:false,foreign_key:true|
-|user_id|reference|null:false,foreign_key:true|
+|product_id|references|null:false,foreign_key:true|
+|user_id|references|null:false,foreign_key:true|
 ### Association
 - belongs_to :user
 - belongs_to :product
@@ -64,13 +64,14 @@
 |shipping_area|references|null:false,foreign_key:true|
 |shipping_day|references|null:false,foreign_key:true|
 |price|integer|null:false|
-|user_id|reference|null:false,foreign_key:true|
-|category_id|reference|null:false,foreign_key:true|
-|brand_id|reference|foreign_key:true|
+|user_id|references|null:false,foreign_key:true|
+|category_id|bigint|null:false,foreign_key:true|
+|brand_id|bigint|foreign_key:true|
+|image_id|references|null:false,foreign_key:true|
 ### Association
 - belongs_to :user
 - belongs_to :category
-- belongs_to :brand
+- has_many :brands
 - has_many :images
 - has_one :order
 - belongs_to_active_hash :status
@@ -83,16 +84,16 @@
 |Column|Type|options|
 |------|----|-------|
 |image|string|null:false|
-|product_id|reference|null:false,foreign_key:true|
+|product_id|references|null:false,foreign_key:true|
 ### Association
 - belongs_to :product
 
-## brands
+## brandsテーブル
 |Column|Type|options|
 |------|----|-------|
-|name|string|null:false|
+|name|string|
 ### Association
-- has_one :product
+- belongs_to :product
 
 ## categoriesテーブル
 |Column|Type|options|
