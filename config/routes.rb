@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  root 'items#index'
+  
+  resources :mypage, only: :index
+
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
