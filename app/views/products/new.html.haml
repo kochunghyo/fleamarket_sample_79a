@@ -1,5 +1,11 @@
-%h1 New product
+.wrapper
+  .header
+    .header__internal
+      .header__internal__main
+        .header__internal__main__icon
+          = link_to '#', class: "header__internal__main__icon__link" do 
+            = image_tag("logo.png", alt: "ロゴ画像" , class: "img")
+  
+  = render 'form'
 
-= render 'form'
-
-= link_to 'Back', products_path
+  = render 'footer'
