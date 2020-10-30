@@ -1,0 +1,131 @@
+.mypage__body
+  .l-side
+    %nav.mypage__nav
+      %ul.mypage__nav__list
+        %li.mypage__nav__list--tab.list-title
+          =link_to "#", class: "mypage__nav__list--item" do
+            マイページ
+            =icon('fas', 'chevron-right', class: "i")
+        %li.mypage__nav__list--tab
+          =link_to "#", class: "mypage__nav__list--item" do
+            お知らせ
+            =icon('fas', 'chevron-right', class: "i")
+        %li.mypage__nav__list--tab
+          =link_to "#", class: "mypage__nav__list--item" do
+            下書き一覧
+            =icon('fas', 'chevron-right', class: "i")
+        %li.mypage__nav__list--tab
+          =link_to "#", class: "mypage__nav__list--item" do
+            出品する
+            =icon('fas', 'chevron-right', class: "i")
+        %li.mypage__nav__list--tab
+          =link_to "#", class: "mypage__nav__list--item" do
+            出品した商品-出品中
+            =icon('fas', 'chevron-right', class: "i")
+        %li.mypage__nav__list--tab
+          =link_to "#", class: "mypage__nav__list--item" do
+            出品した商品-取引中
+            =icon('fas', 'chevron-right', class: "i")
+        %li.mypage__nav__list--tab
+          =link_to "#", class: "mypage__nav__list--item" do
+            出品した商品-売約済み
+            =icon('fas', 'chevron-right', class: "i")
+        %li.mypage__nav__list--tab
+          =link_to "#", class: "mypage__nav__list--item" do
+            購入した商品-取引中
+            =icon('fas', 'chevron-right', class: "i")
+        %li.mypage__nav__list--tab
+          =link_to "#", class: "mypage__nav__list--item" do
+            購入した商品-過去の取引
+            =icon('fas', 'chevron-right', class: "i")
+        %li.mypage__nav__list--tab
+          =link_to "#", class: "mypage__nav__list--item" do
+            評価一覧
+            =icon('fas', 'chevron-right', class: "i")
+        %li.mypage__nav__list--tab
+          =link_to "#", class: "mypage__nav__list--item" do
+            ガイド
+            =icon('fas', 'chevron-right', class: "i")
+        %li.mypage__nav__list--tab
+          =link_to "#", class: "mypage__nav__list--item" do
+            お問い合わせ
+            =icon('fas', 'chevron-right', class: "i")
+        %h3.mypage__nav--head 
+          フリペイ
+          %ul.mypage__nav__list
+            %li.mypage__nav__list--tab
+              =link_to "#", class: "mypage__nav__list--item" do
+                売上・振込申請
+                =icon('fas', 'chevron-right', class: "i")
+            %li.mypage__nav__list--tab
+              =link_to "#", class: "mypage__nav__list--item" do
+                ポイント
+                =icon('fas', 'chevron-right', class: "i")
+            %h3.mypage__nav--head
+              設定
+              %ul.mypage__nav__list
+                %li.mypage__nav__list--tab
+                  =link_to "#", class: "mypage__nav__list--item" do
+                    プロフィール
+                    =icon('fas', 'chevron-right', class: "i")
+                %li.mypage__nav__list--tab
+                  =link_to "#", class: "mypage__nav__list--item" do
+                    発送元・お届け先住所変更
+                    =icon('fas', 'chevron-right', class: "i")
+                %li.mypage__nav__list--tab
+                  =link_to "#", class: "mypage__nav__list--item" do
+                    支払い方法
+                    =icon('fas', 'chevron-right', class: "i")
+                %li.mypage__nav__list--tab
+                  =link_to "#", class: "mypage__nav__list--item" do
+                    メール/パスワード
+                    =icon('fas', 'chevron-right', class: "i")
+                %li.mypage__nav__list--tab
+                  =link_to "#", class: "mypage__nav__list--item" do
+                    本人情報
+                    =icon('fas', 'chevron-right', class: "i")
+                %li.mypage__nav__list--tab
+                  =link_to "#", class: "mypage__nav__list--item" do
+                    電話番号の確認
+                    =icon('fas', 'chevron-right', class: "i")
+                %li.mypage__nav__list--tab
+                  =link_to "#", class: "mypage__nav__list--item" do
+                    ログアウト
+                    =icon('fas', 'chevron-right', class: "i")
+  %main.l-container.clearfix
+    .l-content
+      %section.mypage__user--icon
+        =link_to "#", class: "mypage__user--icon--link" do
+          %figure.image__use__icon--link--figure
+          = image_tag 'member_photo_noimage_thumb.png', alt: "member_photo_noimage_thumb.png", size: '50x50'
+          %h2.bold ニックネーム
+          .mypage__number
+            .mypage__number--info
+            "評価"
+            %span.bold 3
+            "出品数
+            %span.bold 0
+
+      %section.mypage__tabs
+        %h3.mypage__tabs__title お知らせ
+        .mypage__tabs__cotent
+          %ul.mypage__tabs--info
+            %li.mypage__tabs--info--list お知らせ情報1
+            %li.mypage__tabs--info--list お知らせ情報2
+            %li.mypage__tabs--info--list お知らせ情報3
+            %li.mypage__tabs--info--list お知らせ情報4
+            %li.mypage__tabs--info--list お知らせ情報5
+            .mypage__go--list
+              =link_to "#", class: "mypage__go--list--link" do
+                一覧を見る
+
+      %section.mypage__tabs__bottom
+        %h2.mypage__tabs__bottom--purchase 購入した商品
+        .mypage__tabs__bottom--title
+          %h3.mypage__tabs--transaction 取引中
+          .mypage__tabs__content
+            %ul.mypage__tabs__content--item
+              %li.mypage__tabs__content--item--list
+                =link_to "#" do
+              %li.mypage__tabs__content--item--list
+                =link_to "#" do

@@ -1,0 +1,195 @@
+.mypage__body{
+  margin: 0 auto ;
+  display: flex;
+  justify-content: center;
+  background: #f5f5f5;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+  color: #333;
+  .l-side{
+    float:left;
+    width: 280px;
+    height:1100px;
+    margin:40px 40px 100px 50px;
+    background:#eee;
+    .mypage__nav{
+      &__list{
+        list-style:none;
+        background:#eee;
+        color:#333;
+        &--tab{
+          width:280px;
+          height:48px;
+          background:#fff;
+          border-bottom:solid 1px #eee;
+          .mypage__nav__list--item{
+            display: block;
+            width:280px;
+            height:48px;
+            line-height:48px;
+            text-decoration: none;
+            color: #333;
+            padding-left:20px;
+          }
+          i{
+            float:right;
+            line-height: 48px;
+            padding-right: 10px;
+          }
+        }
+        .list-title{
+          background:none;
+        }
+      }
+      .mypage__nav--head{
+        margin:40px 0 8px 0;
+        font-size:16px;
+      }
+    }  
+  }
+  .l-container{
+    width:700px;
+    height:1200px;
+    display:flex;
+    flex-direction:row-reverse;
+    padding:40px 0 0 40px;
+    .l-content{
+      width:700px;
+      height:300px;
+      float:right;
+      background: #48D1CC;
+      .mypage__user--icon {
+        position:relative;
+        width:700px;
+        height:200px;
+        padding:20px;
+        background-size: cover;
+        text-align: center;
+        &--link {
+          width:700px;
+          height: 111px;
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          right: 0;
+          -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+          color: #333;
+          .bold{
+            margin:8px 0 0;
+            font-size:14px;
+            font-weight:600px;
+          }
+          .mypage__number{
+            margin:8px 0 0;
+            &--info{
+              display:inline-block;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+      .mypage__tabs{
+        width:700px;
+        height:567px;
+        background:#fff;
+        &__title{
+          width:700px;
+          height:74px;
+          background:#fff;
+          font-size:18px;
+          display:box;
+          line-height:74px;
+          text-align: center;
+          border-bottom:solid 1px #eee;
+          border-top: solid 2px red;
+        }
+        &__content{
+          width:700px;
+          height:493px;
+          background:#eee;
+        }
+        &--info{
+            list-style: none;
+            &--list{
+              width:700px;
+              height:81px;
+              border-bottom:solid 1px #eee;
+              line-height:40px;
+              display:flex;
+              align-items: center;
+              padding-left:40px;
+            }
+            .mypage__go--list{
+              background:#fff;
+              border-bottom:solid 1px #eee;
+              text-align: center;
+              line-height: 50px;
+              position: relative;
+              padding:16px;
+              &--link{
+                display:block;
+                margin: 0 auto;
+                width: 668px;
+                height:56px;
+                background:#eee;
+                text-decoration: none;
+                color: #333;
+                text-align: center;
+              }
+            }
+          }
+      }
+      .mypage__tabs__bottom{
+        margin: 40px 0 0 ;
+        background: #fff;
+        width: 700px;
+        height: 340px;
+        &--purchase{
+          width: 700px;
+          height: 72px;
+          font-size:16px;
+          line-height: 72px;
+          background: #fafafa;
+          text-align: center;
+        }
+        &--title{
+          width:700px;
+          height:47px;
+          .mypage__tabs--transaction{
+            height:74px;
+            display:block;
+            text-decoration: none;
+            color:#333;
+            text-align:center;
+            font-size:16px;
+            line-height:74px;
+            border-top:solid 2px red;
+            border-bottom:solid 1px #eee;
+          }
+        }
+        .mypage__tabs__content{
+          display:block;
+          height: 200px;
+          width:700px;
+          &--item{
+            display: block;
+            height: 200px;
+            width:700px;
+            list-style:none;
+            background: #fff;
+            &--list{
+              display: block;
+              width:700px;
+              height:74px;
+              line-height:74px;
+              border-bottom:solid 1px #eee;
+              padding-left:16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
