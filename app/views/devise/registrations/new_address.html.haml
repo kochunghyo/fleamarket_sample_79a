@@ -1,29 +1,4 @@
-%h2 住所情報登録
-= form_for(@address) do |f|
-  = render "devise/shared/error_messages", resource: @address
-  .field
-    = f.label '郵便番号'
-    %br/
-    = f.text_field :post_code
-  .field
-    = f.label '都道府県'
-    %br/
-    = f.collection_select :prefecture_id, Prefecture.all, :id, :name
-  .field
-    = f.label '市区町村'
-    %br/
-    = f.text_field :city
-  .field
-    = f.label '番地'
-    %br/
-    = f.text_field :house_number
-  .field
-    = f.label '建物名'
-    %br/
-    = f.text_field :building
-  .field
-    = f.label '電話'
-    %br/
-    = f.text_field :phone_number
-  .action
-    = f.submit "登録完了"
+.account-page
+  = render "header"
+  = render "address_content"
+  = render "footer"

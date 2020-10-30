@@ -1,2 +1,7 @@
-%h2 登録が完了しました
-= link_to "トップへ戻る", root_path
+.account-page
+  = render "header"
+  .account-page__content
+    .account-page__content__conclusion
+      .account-page__content__conclusion__btn
+        = button_to "登録が完了しました", root_path, method: :get, class: "btn"
+  = render "footer"
