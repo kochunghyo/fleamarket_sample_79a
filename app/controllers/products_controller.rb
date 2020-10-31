@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to root_path     
+      redirect_to root_path
     else
       render :new
     end
@@ -29,10 +29,11 @@ class ProductsController < ApplicationController
     end
   end
 
-  def destroy
-    @product.destroy
-    redirect_to root_path
-  end
+
+  # def destroy
+  #   @product.destroy
+  #   redirect_to root_path
+  # end
 
 
   private

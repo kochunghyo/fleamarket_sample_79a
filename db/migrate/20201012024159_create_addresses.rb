@@ -8,7 +8,6 @@ class CreateAddresses < ActiveRecord::Migration[6.0]
       t.string :phone_number
       t.references :user,     null:false
       t.integer :prefecture_id
-
       t.timestamps
     end
   end

@@ -12,13 +12,13 @@ class Product < ApplicationRecord
   belongs_to_active_hash :shipping_area
   belongs_to_active_hash :shipping_day
 
-  valiidates :images, presence: true
-  valiidates :name, presence: true, length: { maximum: 40 }
-  valiidates :explanation, presence: true, length: { maximum: 1000 }
-  valiidates :catgory_id, presence: true
-  valiidates :status_id, presence: true
-  valiidates :delivery_fee_id, presence: true
-  valiidates :shipping_area_id, presence: true
-  valiidates :shipping_day_id, presence: true
-  valiidates :price, presence: true, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
+  validates :images, presence: true
+  validates :name, presence: true, length: { maximum: 40 }
+  validates :explanation, presence: true, length: { maximum: 1000 }
+  validates :catgory_id, presence: true
+  validates :status_id, presence: true
+  validates :delivery_fee_id, presence: true
+  validates :shipping_area_id, presence: true
+  validates :shipping_day_id, presence: true
+  validates :price, presence: true, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
 end
