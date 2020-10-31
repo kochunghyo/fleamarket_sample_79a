@@ -1,0 +1,80 @@
+.account-page__content
+  %h2.account-page__content__head
+    住所情報登録
+  .account-page__content__form
+    = form_for(@address) do |f|
+      .account-page__content__form__main
+        .account-page__content__form__main__group
+          .account-page__content__form_main__group__box
+            .account-page__content__form__main__group__box__label
+              = f.label '郵便番号', class: "label-name"
+              %span.must
+                必須
+            .accout-page__content__form__main__group__box__input
+              = f.text_field :post_code, placeholder: '例)123-4567', class: "input-field"
+              - if @address.errors.any?
+                .errors_explanation
+                  %ul
+                    - @address.errors.full_messages_for(:post_code).each do |message|
+                      %li{style: "color:red"}
+                        = message
+        .account-page__content__form__main__group
+          .account-page__content__form_main__group__box
+            .account-page__content__form__main__group__box__label
+              = f.label '都道府県', class: "label-name"
+              %span.must
+                必須
+              .account-page__content__form__main__group__box__label__prefecture
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "--"}, {class: "select-field"}
+                - if @address.errors.any?
+                  .errors_explanation
+                    %ul
+                      - @address.errors.full_messages_for(:prefecture).each do |message|
+                        %li{style: "color:red"}
+                          = message
+        .account-page__content__form__main__group
+          .account-page__content__form_main__group__box
+            .account-page__content__form__main__group__box__label
+              = f.label '市区町村', class: "label-name"
+              %span.must
+                必須
+            .accout-page__content__form__main__group__box__input
+              = f.text_field :city, placeholder: '例)横浜市緑区', class: "input-field"
+              - if @address.errors.any?
+                .errors_explanation
+                  %ul
+                    - @address.errors.full_messages_for(:city).each do |message|
+                      %li{style: "color:red"}
+                        = message
+        .account-page__content__form__main__group
+          .account-page__content__form_main__group__box
+            .account-page__content__form__main__group__box__label
+              = f.label '番地', class: "label-name"
+              %span.must
+                必須
+            .accout-page__content__form__main__group__box__input
+              = f.text_field :house_number, placeholder: '例)青山1-1-1', class: "input-field"
+              - if @address.errors.any?
+                .errors_explanation
+                  %ul
+                    - @address.errors.full_messages_for(:house_number).each do |message|
+                      %li{style: "color:red"}
+                        = message
+        .account-page__content__form__main__group
+          .account-page__content__form_main__group__box
+            .account-page__content__form__main__group__box__label
+              = f.label '建物名', class: "label-name"
+              %span.option
+                任意
+            .accout-page__content__form__main__group__box__input
+              = f.text_field :building, placeholder: '建物名', class: "input-field"
+        .account-page__content__form__main__group
+          .account-page__content__form_main__group__box
+            .account-page__content__form__main__group__box__label
+              = f.label '電話番号', class: "label-name"
+              %span.option
+                任意
+            .accout-page__content__form__main__group__box__input
+              = f.text_field :phone_number, placeholder: '例)09012345678', class: "input-field"
+        .action
+          = f.submit "登録完了", class: "submit"

@@ -1,0 +1,253 @@
+
+.account-page {
+  background-color: #f5f5f5;
+  font-size: 14px;
+  color: #333;
+  .account-page__header {
+    height: 180px;
+    text-align: center;
+    &__text{
+      display: inline-block;
+      margin: 60px 0 0;
+    }
+    &__link {
+      display: inline-block;
+      width: 185px;
+      height: 49px;
+      line-height: 49px;
+      margin: 0 8px 0 0;
+      &__img {
+        display: inline-block;
+        width: 185px;
+        height: 49px;
+      }
+    }
+    .account-page__header__progres-bar {
+      display: inline-block;
+      vertical-align: top;
+      padding: 40px 0 0 44px;
+      border: 0;
+      .account-page__header__progres-bar__ol__li {
+        .account-page__header__progres-bar__li {
+        font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .account-page__content {
+    width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    &__head {
+      font-size: 20px;
+      padding: 32px;
+      line-height: 1.5;
+      text-align: center;
+      font-weight: bold;
+    }
+    &__signup-head {
+      padding: 32px 0 0 0;
+      line-height: 1.5;
+      text-align: center;
+    }
+    &__signup-btn {
+      text-align: center;
+      .btn {
+        cursor: pointer;
+        width: 311px;
+        background-color: #3ccace;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        line-height: 1.5;
+        font-size: 16px;
+      }
+    }
+    &__conclusion {
+      height: 400px;
+      text-align: center;
+      .btn {
+        cursor: pointer;
+        width: 311px;
+        background-color: #3ccace;
+        margin: 170px;
+        height: 48px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        line-height: 1.5;
+        font-size: 16px;
+      }
+    }
+    &__form {
+      width: 343px;
+      padding: 24px 16px 40px;
+      border-top: 1px solid #f5f5f5;
+      margin: 0 auto;
+      &__main {
+        &__group {
+          &__box {
+            text-align: left;
+            &__input {
+              .account-page__content__form__main__group__box__input__message {
+                color: #888;
+              }
+            }
+          }
+        }
+        .account-page__content__form__main__message {
+          text-align: left;
+        }
+        .account-page__content__form__main__text1 {
+          margin: 8px 0 0;
+          color: #888;
+        }
+        .submit {
+          background-color: #3ccace;
+          width: 100%;
+          margin: 8px 0 0;
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          line-height: 1.5;
+          font-size: 16px;
+        }
+        .account-page__content__form__main__text2 {
+          text-align: right;
+          margin: 30px 0 0;
+        }
+        .account-page__content__form__main__recaptcha {
+          margin: 20px 0 0;
+          padding: 8px 16px;
+          background-color: #f5f5f5;
+          .account-page__content__form__main__recaptcha__term {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+
+  .account-page__footer {
+    width: 456px;
+    height: 250px;
+    margin: 0 auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    padding: 40px 0;
+    text-align: center;
+    &__nav {
+      &__ul {
+        &__li {
+          font-size: 12px;
+          display: inline-block;
+          .account-page__footer__nav__ul__li__text{
+            color: #333;
+            padding: 0 0 0 10px;
+          }
+        }
+      }
+    }
+    &__link {
+      margin: 40px 0 0;
+      display: block;
+      text-align: center;
+    }
+  }
+}
+  
+.text {
+  width: 150px;
+}
+
+.birthday {
+  width: 100px;
+  margin: 8px 0 0;
+  padding: 0 10px;
+  z-index: 2;
+  height: 48px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.option {
+  background-color: #ccc;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.confirmation {
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px 0 0;
+}
+
+.label-name {
+  display: inline-block;
+  font-weight: 600;
+  margin: 20px 0 0;
+}
+
+.must {
+  background-color: #3ccace;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.input-field {
+  width: 100%;
+  margin: 8px 0 0;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.input-name {
+  display: inline-block;
+  width: 150px;
+  margin: 8px 0 0;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.select-field {
+  width: 100%;
+  margin: 8px 0 0;
+  padding: 0 10px;
+  z-index: 2;
+  height: 48px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.small-text {
+  font-size: 13px;
+}
