@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
-      render :new
+      render :new unless @product.valid?
     end
   end
 
