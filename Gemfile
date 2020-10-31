@@ -68,9 +68,10 @@ group :production do
 end
 
 gem "haml-rails", ">= 1.0", '<= 2.0.1'
-gem 'active_hash'
 gem 'devise'
 gem 'active_hash'
 gem 'rails-i18n'
 gem 'pry-rails'
 gem 'font-awesome-sass'
+gem 'carrierwave'
+gem "mini_magick"

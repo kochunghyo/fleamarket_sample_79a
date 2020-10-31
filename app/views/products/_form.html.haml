@@ -1,37 +1,34 @@
 .product-sell-contents
   .product-sell-contents__detail
-    = form_for [@product] do |f|
+    = form_for @product do |f|
       .exhision-info
         %h2.item-sell-title
-          商品の情報を入力    
+          商品の情報を入力
         .product-image
           .product-image_box
             .product-image_box_top
               %label 出品画像
-              %span.essential 
+              %span.essential
                 必須
             .product-image_box_click-upload
               %p.product-image__box_click-upload_explanation
                 クリックしてファイルをアップロード
                 .image-box
-                  = f.label :image, class: 'input-box__image' 
-                  = f.file_field :image, class: 'input-box__image__file'
-          
+                  = f.label :image, class: 'input-box__image'
+                  = f.file_field :image, class: 'input-box_image_file'
       .product-info
         .product-info_name
           %label 商品名
-          %span.essential 
+          %span.essential
             必須
-          .input-name-box 
+          .input-name-box
             = f.text_field :name, class: 'input-name-box_text', placeholder: '商品名（必須　40字まで）'
         .product-info_explanation
           %label 商品の説明
-          %span.essential 
+          %span.essential
             必須
-      
           .input-detail-box
             = f.text_area :name, class: 'input-detail-box_text', placeholder: '商品の説明（必須 1,000文字以内）色、素材、重さ、定価、注意点など\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
-        
       .product-detail
         %p.product-detail_title
           商品の詳細
@@ -46,8 +43,6 @@
             %span.essential
               必須
             %select.product-detail_explanation_condition_selectbox
-          
-
       .delivery-info
         %span.delivery-info_explanation
           配送について
@@ -59,7 +54,7 @@
               配送料の負担
               %span.essential
                 必須
-          %select.delivery-info_data_who-pays-shipping-charges  
+          %select.delivery-info_data_who-pays-shipping-charges
           .delivery-info_data_box2
             .delivery-info_data_box2_shipping-source
               発送元の地域
@@ -72,7 +67,6 @@
               %span.essential
                 必須
           %select.delivery-info_data_days
-          
       .price-info
         %p.price-info_explanation
           販売価格
@@ -80,7 +74,6 @@
             ?
           %br
           （¥300~9,999,999)
-
         .price-info_content
           .price-info_content_price
             %span 価格
@@ -101,7 +94,7 @@
       .caution
         %p.sentence1
           = link_to '#', class: "caution_action" do
-            禁止されている出品、 行為 
+            禁止されている出品、 行為
           %span.sentence
             を必ずご確認ください。
         %p.sentence2
@@ -115,19 +108,21 @@
           %span.sentence
             また、出品をもちまして
           = link_to '#', class: "caution_action" do
-            加盟店規約 
-          %span.sentence 
+            加盟店規約
+          %span.sentence
             に同意したことになります。
-        
       .selling-system
         = link_to '#', class: "selling-system_btn" do
           出品する
         = link_to 'products_path', class: "selling-system_draft" do
           もどる
-  
-    
-    
-      
 
 
-    
+
+
+
+
+
+
+
+

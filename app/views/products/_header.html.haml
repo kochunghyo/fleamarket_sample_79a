@@ -1,4 +1,32 @@
 .header
-  .header_icon
-    = link_to '#', class: "header__icon__link" do 
-      = image_tag("logo.png", alt: "ロゴ画像" , class: "img")
+  .header__internal
+    .header__internal__main
+      .header__internal__main__icon
+        = link_to '#', class: "header__internal__main__icon__link" do 
+          = image_tag("logo.png", alt: "ロゴ画像" , class: "img")
+      .header__internal__main__searchbox
+        = form_with url: '#', class: "header__internal__main__searchbox__form" do |form|
+          = form.text_field :content, class: "header__internal__main__searchbox__form__input" ,placeholder: "キーワードから探す"
+          = button_tag type: "submit", class: "header__internal__main__searchbox__form__btn" do
+            .header__internal__main__searchbox__icon
+              = image_tag("icon-search 1.png", alt: "検索画像" , class: "img")
+      .header__internal__main__resultlists
+
+    .header__internal__nav
+      %ul.header__internal__nav__leftlist
+        %li.header__internal__nav__leftlist__category
+          = link_to '#' do
+            カテゴリー
+        %li.header__internal__nav__leftlist__brand
+          = link_to '#' do
+            ブランド
+
+      %ul.header__internal__nav__rightlist
+        - if user_signed_in?
+          %li
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
+        - else
+          %li.header__internal__nav__rightlist__login
+            = link_to "ログイン", new_user_session_path
+          %li.header__internal__nav__rightlist__newmember
+            = link_to "新規会員登録", new_user_registration_path
