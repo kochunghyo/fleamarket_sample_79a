@@ -1,7 +1,18 @@
 ja:
   activerecord:
     attributes:
+      address:
+        prefecture: 都道府県
+        post_code: 郵便番号
+        city: 市区町村
+        house_number: 番地
       user:
+        birthday: 誕生日
+        first_name: 名
+        first_name_kana: 名メイ
+        last_name: 姓
+        last_name_kana: 姓セイ
+        nickname: ニックネーム
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン
         confirmed_at: パスワード確認時刻
@@ -10,7 +21,7 @@ ja:
         current_sign_in_at: 現在のログイン時刻
         current_sign_in_ip: 現在のログインIPアドレス
         email: Eメール
-        encrypted_password: 暗号化パスワード
+        encrypted_password: 確認用パスワード
         failed_attempts: 失敗したログイン試行回数
         last_sign_in_at: 最終ログイン時刻
         last_sign_in_ip: 最終ログインIPアドレス

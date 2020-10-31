@@ -1,0 +1,13 @@
+.account-page__footer
+  %nav.account-page__footer-page__nav
+    %ul.account-page__footer__nav__ul
+      %li.account-page__footer__nav__ul__li
+        = link_to "プライバシーポリシー", '#', class: "account-page__footer__nav__ul__li__text"
+      %li.account-page__footer__nav__ul__li
+        = link_to "フリマ利用規約", '#', class: "account-page__footer__nav__ul__li__text"
+      %li.account-page__footer__nav__ul__li
+        = link_to "特定商取引に関する表記", '#', class: "account-page__footer__nav__ul__li__text"
+  = link_to root_path, class: "account-page__footer__link" do
+    = image_tag 'logo-white.png', alt: 'furima', height: '55', width: '130', class: 'account-page__footer__link__img'
+  %small.small-text
+    @Furima,Inc.

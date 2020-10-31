@@ -1,9 +1,17 @@
-%h2 パスワードをお忘れの方
-= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label 'メールアドレス'
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'ご登録されたメールアドレス'
-  .actions
-    = f.submit "送信する"
+.account-page
+  = render "header"
+  .account-page__content
+    %h2.account-page__content__head
+      パスワードをお忘れの方
+    .account-page__content__form
+      = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+        .account-page__content__form__main
+          .account-page__content__form__main__group
+            .account-page__content__form__main__group__box
+              .account-page__content__form__main__group__box__label
+                = f.label 'メールアドレス', class: "label-name"
+              .account-page__content__form__main__group__box__input
+                = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'ご登録されたメールアドレス', class: "input-field"
+          .account-page__content__form__main
+            = f.submit "送信する", class: "submit"
+  = render "footer"
