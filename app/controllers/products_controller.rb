@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
+  end
 
   def create
     @product = Product.new(product_params)
@@ -38,14 +39,11 @@ class ProductsController < ApplicationController
 
   private
 
-  def product_params
-    params.require(:product).permit(:name, :explanation, :category_id, :status_id, :delivery_fee_id, :shipping_area_id, :shipping_day_id, :price, images_attributes: [:image, :_destroy, :id])
-  end
+    def product_params
+      params.require(:product).permit(:name, :explanation, :category_id, :status_id, :delivery_fee_id, :shipping_area_id, :shipping_day_id, :price, images_attributes: [:image, :_destroy, :id])
+    end
 
-  def set_product
-    @product = Product.find(params[:id])
-  end
-
-end
-
+    def set_product
+      @product = Product.find(params[:id])
+    end
 end
