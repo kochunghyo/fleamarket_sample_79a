@@ -1,4 +1,4 @@
 class Catogory < ApplicationRecord
   has_many :products
-  validates :name, ancestry, presence: true
+  validates :name, presence: true
 end
