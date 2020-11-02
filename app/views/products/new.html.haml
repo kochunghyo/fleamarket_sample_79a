@@ -3,9 +3,7 @@
     .header-exhibition__internal
       .header-exhibition__internal__main
         .header-exhibition__internal__main__icon
-          = link_to '#', class: "header-exhibition__internal__main__icon__link" do 
+          = link_to root_path, class: "header-exhibition__internal__main__icon__link" do 
             = image_tag("logo.png", alt: "ロゴ画像" , class: "img")
-  
   = render 'form'
-
   = render 'footer2'
