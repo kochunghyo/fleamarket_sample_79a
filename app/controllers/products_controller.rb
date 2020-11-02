@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @product.images.build
+    @product.images.new
   end
 
   def create
@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
-      render :new 
+      render :new unless @product.valid?
     end
   end
 
@@ -30,10 +30,17 @@ class ProductsController < ApplicationController
     end
   end
 
+
+  # def destroy
+  #   @product.destroy
+  #   redirect_to root_path
+  # end
+
+
   private
 
     def product_params
-      params.require(:product).permit(:name, :explanation, :category_id, :status_id, :delivery_fee_id, :shipping_area_id, :shipping_day_id, :price, images_attributes: [:image])
+      params.require(:product).permit(:name, :explanation, :category_id, :status_id, :delivery_fee_id, :shipping_area_id, :shipping_day_id, :price, images_attributes: [:image, :_destroy, :id])
     end
 
     def set_product
