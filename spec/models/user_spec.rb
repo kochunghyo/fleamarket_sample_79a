@@ -83,25 +83,25 @@ describe User do
     it "last_nameが全角で入力されていない場合は登録できないこと" do
       user = build(:user, last_name: "ﾔﾏﾀﾞ")
       user.valid?
-      expect(user.errors[:last_name]).to include("全角以外は入力できません")
+      expect(user.errors[:last_name]).to include("は全角で入力してください")
     end
 
     it "first_nameが全角で入力されていない場合は登録できないこと" do
       user = build(:user, first_name: "ｱﾔ")
       user.valid?
-      expect(user.errors[:first_name]).to include("全角以外は入力できません")
+      expect(user.errors[:first_name]).to include("は全角で入力してください")
     end
 
     it "last_name_kanaが全角カタカナで入力されていない場合は登録できないこと" do
       user = build(:user, last_name_kana: "やまだ")
       user.valid?
-      expect(user.errors[:last_name_kana]).to include("全角カタカナ以外は入力できません")
+      expect(user.errors[:last_name_kana]).to include("は全角カナで入力してください")
     end
 
     it "first_name_kanaが全角カタカナで入力されていない場合は登録できないこと" do
       user = build(:user, first_name_kana: "あや")
       user.valid?
-      expect(user.errors[:first_name_kana]).to include("全角カタカナ以外は入力できません")
+      expect(user.errors[:first_name_kana]).to include("は全角カナで入力してください")
     end
 
 
