@@ -25,13 +25,7 @@ ActiveRecord::Schema.define(version: 2020_10_13_035420) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
-  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "catogories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "ancestry", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -49,10 +43,10 @@ ActiveRecord::Schema.define(version: 2020_10_13_035420) do
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "explanation", null: false
+    t.string "brand"
     t.integer "price", null: false
     t.bigint "user_id"
     t.bigint "category_id", null: false
-    t.bigint "brand_id"
     t.bigint "status_id", null: false
     t.bigint "delivery_fee_id", null: false
     t.bigint "shipping_area_id", null: false
