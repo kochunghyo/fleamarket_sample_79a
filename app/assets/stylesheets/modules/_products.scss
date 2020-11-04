@@ -231,8 +231,7 @@
     align-items: center;
     &__content {
       color: #fff;
-      text-shadow:
-         0 0 5px rgba(0,0,0,0.4);
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
       text-align: left;
       max-width: 1040px;
       width: 100%;
@@ -333,45 +332,57 @@
       &__lists {
         width: 780px;
         margin: 26px auto;
-        display: flex;
-        justify-content: space-around;
-        &__list {
-          width: 220px;
-          display: inline-block;
-          float: left;
-          &__link {
-            background-color: #fff;
-            display: inline-block;
-          }
-          &__img {
-            width: 220px;
-            height: 150px;
-            position: relative;
-            overflow: hidden;
-            margin: 0;
-            z-index: auto
-          }
-          &__content {
-            background-color: white;
-            color: #333;
-            padding: 16px;
-            &__name {
-              font-size: 16px;
-              text-align: left;
-              overflow: hidden;
-              line-height: 1.5;
-            }
-            &__detail {
-              font-size: 16px;
-              ul {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+        &__image {
+          display: flex;
+          justify-content: space-around;
+          &__group {
+            display: flex;
+            &__list {
+              width: 220px;
+              display: inline-block;
+              &__link {
+                &__img {
+                  width: 220px;
+                  height: 150px;
+                  position: relative;
+                  overflow: hidden;
+                  margin: 0;
+                  z-index: auto
+                }
               }
-              p {
-                font-size: 10px;
-                text-align: left;
-              }          
+            }
+          }
+        }
+        &__text {
+          display: flex;
+          justify-content: space-around;
+          &__list {
+            display: flex;
+            &__content {
+              width: 220px;
+              background-color: white;
+              color: #333;
+              padding: 16px;
+              &__link {
+                &__name {
+                  font-size: 16px;
+                  text-align: left;
+                  overflow: hidden;
+                  line-height: 1.5;
+                }
+                &__detail {
+                  font-size: 16px;
+                  ul {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                  }
+                  p {
+                    font-size: 10px;
+                    text-align: left;
+                  }
+                }
+              }       
             }
           }
         }
