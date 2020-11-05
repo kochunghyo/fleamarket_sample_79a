@@ -3,6 +3,8 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.includes(:images).order("created_at DESC")
+    @images = Image.last(5)
+    @product_lists = Product.last(5)
   end
 
   def new

@@ -18,5 +18,5 @@ describe Product do
         product.valid?
         expect(product.errors[:images]).to include("を入力してください")
       end
-   end
+  end
 end
