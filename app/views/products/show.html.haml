@@ -78,6 +78,14 @@
                   = link_to "#" , class: "optional_btn_link" do
                     = icon('fas','flag',class: "i")
                     不適切な商品の通報
+          .details_box
+            .details_box-list
+              = link_to "#" , class: "details_box-list_btn_edit" do
+                商品の編集
+              %p.text-center
+                or
+              = link_to "#" , class: "details_box-list_btn_delete" do
+                この商品を削除する
           .comment_box
             %ul.comment_box_contents
               = form_with class: "new_comment" do |f|
@@ -92,10 +100,10 @@
                   = icon('fas','comment',class: "i")
         %ul.links
           %li
-          = link_to "#" , class: "links_link" do
-            = icon('fas','angle-left',class: "i")
-            %span
-              前の商品
+            = link_to "#" , class: "links_link" do
+              = icon('fas','angle-left',class: "i")
+              %span
+                前の商品
           %li
             = link_to "#" , class: "links_link" do
               %span
