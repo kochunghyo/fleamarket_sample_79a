@@ -14,9 +14,16 @@
               %p.product-image__box_click-upload_explanation
                 クリックしてファイルをアップロード
                 .image-box
+                  .previews
+                  -if @product.persisted?
+                    - @product.images.each_with_index do |images, i|
+                      - image_tag images.image.url, data: { index: i }, width: "100", height: '100'
                   = f.fields_for :images do |i|
-                    = i.file_field :image
-                  
+                    .js-file_group{"data-index" => "#{i.index}"}
+                      = i.file_field :image, class: "js-file"
+                      .js-remove
+                        削除
+                    
       .product-info
         .product-info_name
           %label 商品名
@@ -91,7 +98,7 @@
             %span.essential
               必須
             %span.sell-yen ¥
-            = f.text_field :price, class: 'input-price-box', placeholder: '半角数字で入力'
+            = f.text_field :price, class: 'input-price-box', placeholder: '半角数字で入力',type: 'number' 
           .price-info_content_shipping-fee
             %span.price
               販売手数料(10%)
