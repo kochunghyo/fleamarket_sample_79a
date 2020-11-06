@@ -23,13 +23,13 @@
           %span.essential
             必須
           .input-name-box
-            = f.text_field :name, class: 'input-name-box_text', placeholder: '商品名（必須　40字まで）'
+            = f.text_field :name, class: 'input-name-box_text', placeholder: '商品名（必須  40字まで）'
         .product-info_explanation
           %label 商品の説明
           %span.essential
             必須
           .input-detail-box
-            = f.text_area :explanation, class: 'input-detail-box_text', placeholder: '商品の説明（必須 1,000文字以内）色、素材、重さ、定価、注意点など\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
+            = f.text_area :explanation, class: 'input-detail-box_text', placeholder: '商品の説明（必須 1,000文字以内）色、素材、重さ、定価、注意点など  例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
       .product-detail
         %p.product-detail_title
           商品の詳細
@@ -95,13 +95,13 @@
           .price-info_content_shipping-fee
             %span.price
               販売手数料(10%)
-            %span.yen
-              円
+            %span.fee
+              ー
           .price-info_content_profit
             %span.price
               販売利益
-            %span.yen
-              円
+            %span.profit
+              ー
       .caution
         %p.sentence1
           = link_to '#', class: "caution_action" do
