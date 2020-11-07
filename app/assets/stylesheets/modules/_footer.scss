@@ -1,0 +1,59 @@
+.footer-exhibition {
+  background-color: #f5f5f5;
+  width: 100%;
+  padding: 3ch 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  &_menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 3vh 0;
+    text-align: center;
+    .privacy-policy_btn {
+      color: black;
+      font-size: 12px;
+      margin: 2vw;
+      text-decoration: none;
+    } 
+    .terms-of-service_btn {
+      color: black;
+      font-size: 12px;
+      margin: 2vw;
+      text-decoration: none;
+    }
+    .sct-law_btn {
+      color: black;
+      font-size: 12px;
+      margin: 2vw;
+      text-decoration: none;
+    }
+  }
+  .image {
+    padding:0 60px;
+    &__internal {
+      max-width: 1040px;
+      width: 100%;
+      min-height: 82px;
+      margin: 0 auto;
+      padding: 15px 0 0;
+      &__main {
+        position: relative;
+        display: flex;
+        align-items: center;
+        &__icon {
+          padding-bottom: 10px;
+          margin-right: 30px;
+          border-radius: 4px;
+          margin: 0 auto;
+          &__link {
+            width: 140px;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

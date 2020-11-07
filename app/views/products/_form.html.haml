@@ -1,13 +1,145 @@
-= form_for @product do |f|
-  - if @product.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@product.errors.count, "error")} prohibited this product from being saved:"
-      %ul
-        - @product.errors.full_messages.each do |message|
-          %li= message
+.product-sell-contents
+  .product-sell-contents__detail
+    = form_for @product do |f|
+      .exhision-info
+        %h2.item-sell-title
+          商品の情報を入力
+        .product-image
+          .product-image_box
+            .product-image_box_top
+              %label 出品画像
+              %span.essential
+                必須
+            .product-image_box_click-upload
+              %p.product-image__box_click-upload_explanation
+                クリックしてファイルをアップロード
+                .image-box
+                  .previews
+                  -if @product.persisted?
+                    - @product.images.each_with_index do |images, i|
+                      - image_tag images.image.url, data: { index: i }, width: "100", height: '100'
+                  = f.fields_for :images do |i|
+                    .js-file_group{"data-index" => "#{i.index}"}
+                      = i.file_field :image, class: "js-file"
+                      .js-remove
+                        削除
+                    
+      .product-info
+        .product-info_name
+          %label 商品名
+          %span.essential
+            必須
+          .input-name-box
+            = f.text_field :name, class: 'input-name-box_text', placeholder: '商品名（必須  40字まで）'
+        .product-info_explanation
+          %label 商品の説明
+          %span.essential
+            必須
+          .input-detail-box
+            = f.text_area :explanation, class: 'input-detail-box_text', placeholder: '商品の説明（必須 1,000文字以内）色、素材、重さ、定価、注意点など  例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
+      .product-detail
+        %p.product-detail_title
+          商品の詳細
+        .product-detail_explanation
+          .product-detail_explanation_category
+            %label カテゴリー
+            %span.essential
+              必須
+            = f.collection_select :category_id, Category.all, :id, :name, {prompt: "--"},{class: 'product-detail_explanation_category_selectbox'}
+          
+          .product-detail_explanation_brand
+            %label ブランド
+            %span.uptoyou  任意
+            = f.text_field :brand, class: 'product-detail_explanation_brand_selectbox', placeholder: '任意'
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .actions
-    = f.submit 'Save'
+          .product-detail_explanation_condition
+            %label 商品の状態
+            %span.essential
+              必須
+            = f.collection_select :status_id, Status.all, :id, :name, {prompt: "--"},{class: 'product-detail_explanation_condition_selectbox'}
+
+      .delivery-info
+        %span.delivery-info_explanation
+          配送について
+          = link_to '#', class: "questionmark" do
+            ?
+        .delivery-info_data
+          .delivery-info_data_box1
+            .delivery-info_data_box1_burden-of-shipping-charges
+              配送料の負担
+              %span.essential
+                必須
+          = f.collection_select :delivery_fee_id, DeliveryFee.all, :id, :name, {prompt: "--"},{class: 'delivery-info_data_who-pays-shipping-charges'}
+
+          .delivery-info_data_box2
+            .delivery-info_data_box2_shipping-source
+              発送元の地域
+              %span.essential
+                必須
+          = f.collection_select :shipping_area_id, ShippingArea.all, :id, :name, {prompt: "--"},{class: 'delivery-info_data_prefecture'}
+
+          .delivery-info_data_box3
+            .delivery-info_data_box3_shipping-days
+              発送までの日数
+              %span.essential
+                必須
+          = f.collection_select :shipping_day_id, ShippingDay.all, :id, :name, {prompt: "--"},{class: 'delivery-info_data_days'}
+
+      .price-info
+        %p.price-info_explanation
+          販売価格
+          = link_to '#', class: "questionmark" do
+            ?
+          %br
+          （¥300~9,999,999)
+        .price-info_content
+          .price-info_content_price
+            %span 価格
+            %span.essential
+              必須
+            %span.sell-yen ¥
+            = f.text_field :price, class: 'input-price-box', placeholder: '半角数字で入力',type: 'number' 
+          .price-info_content_shipping-fee
+            %span.price
+              販売手数料(10%)
+            %span.fee
+              ー
+          .price-info_content_profit
+            %span.price
+              販売利益
+            %span.profit
+              ー
+      .caution
+        %p.sentence1
+          = link_to '#', class: "caution_action" do
+            禁止されている出品、 行為
+          %span.sentence
+            を必ずご確認ください。
+        %p.sentence2
+          %p.sentence
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+          = link_to '#', class: "caution_action" do
+            偽ブランドの販売は
+          %span.sentence
+            犯罪であり処罰される可能性があります。
+        %p.sentence3
+          %span.sentence
+            また、出品をもちまして
+          = link_to '#', class: "caution_action" do
+            加盟店規約
+          %span.sentence
+            に同意したことになります。
+      .selling-system
+        = f.submit "出品する", class: "selling-system_btn" 
+        = link_to root_path, class: "selling-system_draft" do
+          もどる
+
+
+
+
+
+
+
+
+
+
