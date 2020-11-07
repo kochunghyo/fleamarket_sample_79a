@@ -24,7 +24,7 @@
       %ul.header__internal__nav__rightlist
         - if user_signed_in?
           %li
-            = link_to "ログアウト", destroy_user_session_path, method: :delete
+            = link_to "マイページ", mypage_index_path
         - else
           %li.header__internal__nav__rightlist__login
             = link_to "ログイン", new_user_session_path

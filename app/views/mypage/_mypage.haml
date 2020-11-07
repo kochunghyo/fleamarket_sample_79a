@@ -89,7 +89,7 @@
                     電話番号の確認
                     =icon('fas', 'chevron-right', class: "i")
                 %li.mypage__nav__list--tab
-                  =link_to "#", class: "mypage__nav__list--item" do
+                  =link_to destroy_user_session_path, method: :delete, class: "mypage__nav__list--item" do
                     ログアウト
                     =icon('fas', 'chevron-right', class: "i")
   %main.l-container.clearfix
@@ -126,6 +126,6 @@
           .mypage__tabs__content
             %ul.mypage__tabs__content--item
               %li.mypage__tabs__content--item--list
-                =link_to "#" do
+                =link_to "#" 
               %li.mypage__tabs__content--item--list
-                =link_to "#" do
+                =link_to "#" 
