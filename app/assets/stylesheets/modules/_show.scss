@@ -146,6 +146,45 @@
             }
           }
         }
+        .details_box{
+          width: 700px;
+          margin: 0 auto;
+          &-list{
+            margin: 24px 0 24px 0;
+            background: #fff;
+            padding: 8px 16px 8px 16px;
+            &_btn_edit{
+              margin: 16px 0 16px 0;
+              background: #ea352d;
+              border: 1px solid #ea352d;
+              color: #fff;
+              text-decoration: none;
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              border-radius: 4px;
+              text-align: center;
+            }
+            .text-center{
+              font-size: 16px;
+              text-align: center;
+            }
+            &_btn_delete{
+              margin: 16px 0 16px 0;
+              background: #aaa;
+              border: 1px solid #aaa;
+              color: #fff;
+              text-decoration: none;
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              border-radius: 4px;
+              text-align: center;
+            }
+          }
+        }
         .comment_box{
           padding: 24px;
           background-color: #fff;

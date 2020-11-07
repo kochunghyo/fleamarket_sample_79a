@@ -1,13 +1,18 @@
 class ProductsController < ApplicationController
+
   before_action :set_product, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
 
   def index
-    @products = Product.includes(:images).order("created_at DESC")
+    @products = Product.includes(:images).order("created_at DESC").limit(5)
   end
 
   def new
-    @product = Product.new
-    @product.images.build
+    if user_signed_in?
+      @product = Product.new
+      @product.images.build
+    else
+      redirect_to new_user_session_path
+    end
     @category_parent_array = []
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent
@@ -42,14 +47,22 @@ class ProductsController < ApplicationController
       render :edit
     end
   end
+  
+  def destroy
+    if @product.seller_id == current_user.id && @product.destroy
+      redirect_to root_path
+    else
+      render "products/show"
+    end
+  end
 
   private
 
-    def product_params
-      params.require(:product).permit(:name, :explanation, :category_id, :status_id, :delivery_fee_id, :shipping_area_id, :shipping_day_id, :price, images_attributes: [:image])
-    end
+  def product_params
+    params.require(:product).permit(:name, :brand, :explanation, :category_id, :status_id, :delivery_fee_id, :shipping_area_id, :shipping_day_id, :price, images_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id)
+  end
 
-    def set_product
-      @product = Product.find(params[:id])
-    end
+  def set_product
+    @product = Product.find(params[:id])
+  end
 end
