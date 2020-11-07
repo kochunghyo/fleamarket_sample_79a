@@ -9,6 +9,8 @@ class Product < ApplicationRecord
   belongs_to_active_hash :delivery_fee
   belongs_to_active_hash :shipping_area
   belongs_to_active_hash :shipping_day
+  belongs_to :seller, class_name: "User"
+  # belongs_to :buyer, class_name: "User"
 
   validates :images, presence: true
   validates :name, presence: true, length: { maximum: 40 }
