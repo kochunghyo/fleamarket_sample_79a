@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create]
+  before_action :set_product, except: [:index, :new, :create ]
 
   def index
     @products = Product.includes(:images).order("created_at DESC")
@@ -31,14 +31,12 @@ class ProductsController < ApplicationController
       render :edit
     end
   end
-
+  
   def destroy
-    if @product.seller_id == current_user.id
-      if@product.destroy
-        redirect_to root_path
-      else
-        render "products/show"
-      end
+    if @product.seller_id == current_user.id && @product.destroy
+      redirect_to root_path
+    else
+      render "products/show"
     end
   end
 
