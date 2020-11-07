@@ -32,10 +32,20 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    if @product.seller_id == current_user.id
+      if@product.destroy
+        redirect_to root_path
+      else
+        render "products/show"
+      end
+    end
+  end
+
   private
 
     def product_params
-      params.require(:product).permit(:name, :brand, :explanation, :category_id, :status_id, :delivery_fee_id, :shipping_area_id, :shipping_day_id, :price, images_attributes: [:image])
+      params.require(:product).permit(:name, :brand, :explanation, :category_id, :status_id, :delivery_fee_id, :shipping_area_id, :shipping_day_id, :price, images_attributes: [:image, :_destroy, :id])
     end
 
     def set_product
