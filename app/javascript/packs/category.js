@@ -33,7 +33,6 @@ $(function(){
   // 親カテゴリー選択後のイベント
   $('#product_category_id').on('change', function(){
     var parentCategory = document.getElementById('product_category_id').value; //選択された親カテゴリーの名前を取得
-    // console.log(parentCategory)
     if (parentCategory != "---"){ //親カテゴリーが初期値でないことを確認
       $.ajax({
         url: '/products/get_category_children',

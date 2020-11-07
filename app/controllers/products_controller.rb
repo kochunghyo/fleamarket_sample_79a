@@ -10,7 +10,6 @@ class ProductsController < ApplicationController
     @product.images.build
     @category_parent_array = []
     Category.where(ancestry: nil).each do |parent|
-      # binding.pry
       @category_parent_array << parent
     end
   end
@@ -18,8 +17,6 @@ class ProductsController < ApplicationController
   def get_category_children
     category = Category.find(params[:parent_id])
     @category_children = category.children
-    # binding.pry
-    # @category_children = Category.find_by(name: "#{params[:parent_id]}",ancestry: nil).children
   end
 
   def get_category_grandchildren
