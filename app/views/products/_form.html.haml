@@ -98,7 +98,7 @@
             %span.essential
               必須
             %span.sell-yen ¥
-            = f.text_field :price, class: 'input-price-box', placeholder: '半角数字で入力',type: 'number' 
+            = f.text_field :price, class: 'input-price-box', placeholder: '半角数字で入力',type: 'number',autocomplete: 'off'
           .price-info_content_shipping-fee
             %span.price
               販売手数料(10%)
