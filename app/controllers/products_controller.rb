@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create, :get_category_children, :get_categry_grandchildren]
+  before_action :set_product, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
 
   def index
     @products = Product.includes(:images).order("created_at DESC")
@@ -19,12 +19,11 @@ class ProductsController < ApplicationController
     category = Category.find(params[:parent_id])
     @category_children = category.children
     # binding.pry
-
     # @category_children = Category.find_by(name: "#{params[:parent_id]}",ancestry: nil).children
   end
 
-  def get_categry_grandchildren
-    @category_grandchildren = Category.find("#{params[:child_id]}").children
+  def get_category_grandchildren
+    @category_grandchildren = Category.find(params[:child_id]).children
   end
 
   def create

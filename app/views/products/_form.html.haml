@@ -39,8 +39,8 @@
             %span.essential
               必須
             .categorylist-select-wrapper
-              .categorylist-select-wrapper__box
-                = f.collection_select :category_id, @category_parent_array, :id, :name, {class: 'categorylist-select-wrapper__box--select', id: 'parent_category'}
+            .categorylist-select-wrapper__box
+              = f.collection_select :category_id, @category_parent_array, :id, :name, {class: 'categorylist-select-wrapper__box--select', id: 'parent_category'}
           
           .product-detail_explanation_brand
             %label ブランド
