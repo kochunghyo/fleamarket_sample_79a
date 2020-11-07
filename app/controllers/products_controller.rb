@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create]
+  before_action :set_product, except: [:index, :new, :create ]
 
   def index
     @products = Product.includes(:images).order("created_at DESC").limit(5)
@@ -33,11 +33,19 @@ class ProductsController < ApplicationController
       render :edit
     end
   end
+  
+  def destroy
+    if @product.seller_id == current_user.id && @product.destroy
+      redirect_to root_path
+    else
+      render "products/show"
+    end
+  end
 
   private
 
   def product_params
-    params.require(:product).permit(:name, :brand, :explanation, :category_id, :status_id, :delivery_fee_id, :shipping_area_id, :shipping_day_id, :price, images_attributes: [:image]).merge(seller_id: current_user.id)
+    params.require(:product).permit(:name, :brand, :explanation, :category_id, :status_id, :delivery_fee_id, :shipping_area_id, :shipping_day_id, :price, images_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id)
   end
 
   def set_product
