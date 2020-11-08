@@ -98,29 +98,23 @@
           %h3.body__pickup_container__products__head__link__title 新規投稿商品
 
       .body__pickup_container__products__lists
-        .body__pickup_container__products__lists__image
-          %ul.body__pickup_container__products__lists__image__group
-            - @images.each do |image|
-              %li.body__pickup_container__products__lists__image__group__list
-                = link_to '#', class: "body__pickup_container__products__lists__image__group__list__link" do
-                  = image_tag image.image.url, class: "body__pickup_container__products__lists__image__group__list__link__img"
-        .body__pickup_container__products__lists__text
-          %ul.body__pickup_container__products__lists__text__list
-            - @product_lists.each do |product|
-              %li.body__pickup_container__products__lists__text__list__content
-                = link_to '#', class: "body__pickup_container__products__lists__image__list__link" do
-                  .body__pickup_container__products__lists__text__list__content__link__name
-                    %h3
-                      = product.name
-                  .body__pickup_container__products__lists__text__list__content__link__detail
-                    %ul
-                      %li
-                        = product.price 
-                        円
-                      %li 
-                        = icon('fas','star',class: "i")
-                        1
-                    %p (税込)
+        .body__pickup_container__products__lists__list
+          - @products.each do |product|
+            %ul.body__pickup_container__products__lists__list__group
+              = link_to '#', class: "body__pickup_container__products__lists__list__group__link" do
+                %li.body__pickup_container__products__lists__list__group__link__images
+                  = image_tag product.images.first.image.url, class: "img"
+                %li.body__pickup_container__products__lists__list__group__link__content
+                  %h3.body__pickup_container__products__lists__list__group__link__content__name
+                    = product.name
+                  %ul.body__pickup_container__products__lists__list__group__link__content__detaile
+                    %li
+                      = product.price
+                      円
+                    %li
+                      = icon('fas','star',class: "i")
+                      1
+                  %p (税込)
                 
   .body__pickup_container
     %h2.body__pickup_container__head
@@ -131,26 +125,20 @@
           %h3.body__pickup_container__products__head__link__title アーカイバ
 
       .body__pickup_container__products__lists
-        .body__pickup_container__products__lists__image
-          %ul.body__pickup_container__products__lists__image__group
-            - @images.each do |image|
-              %li.body__pickup_container__products__lists__image__group__list
-                = link_to '#', class: "body__pickup_container__products__lists__image__group__list__link" do
-                  = image_tag image.image.url, class: "body__pickup_container__products__lists__image__group__list__link__img"
-        .body__pickup_container__products__lists__text
-          %ul.body__pickup_container__products__lists__text__list
-            - @product_lists.each do |product|
-              %li.body__pickup_container__products__lists__text__list__content
-                = link_to '#', class: "body__pickup_container__products__lists__image__list__link" do
-                  .body__pickup_container__products__lists__text__list__content__link__name
-                    %h3
-                      = product.name
-                  .body__pickup_container__products__lists__text__list__content__link__detail
-                    %ul
-                      %li
-                        = product.price 
-                        円
-                      %li 
-                        = icon('fas','star',class: "i")
-                        1
-                    %p (税込)
+        .body__pickup_container__products__lists__list
+          - @products.each do |product|
+            %ul.body__pickup_container__products__lists__list__group
+              = link_to '#', class: "body__pickup_container__products__lists__list__group__link" do
+                %li.body__pickup_container__products__lists__list__group__link__images
+                  = image_tag product.images.first.image.url, class: "img"
+                %li.body__pickup_container__products__lists__list__group__link__content
+                  %h3.body__pickup_container__products__lists__list__group__link__content__name
+                    = product.name
+                  %ul.body__pickup_container__products__lists__list__group__link__content__detaile
+                    %li
+                      = product.price
+                      円
+                    %li
+                      = icon('fas','star',class: "i")
+                      1
+                  %p (税込)
