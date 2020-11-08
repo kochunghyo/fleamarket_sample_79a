@@ -15,3 +15,5 @@ class User < ApplicationRecord
   validates :encrypted_password, presence: true, length: { minimum: 7 }
   
 end
+
+
