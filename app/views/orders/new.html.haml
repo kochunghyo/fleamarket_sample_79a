@@ -2,28 +2,29 @@
   .header
     .header__image
       = link_to '/' do
-        = image_tag src="logo.png", class: "image"
+        = image_tag src="logo.png", class: "images"
 
   .purchase
     .purchase__confirm
       .purchase__confirm__title 購入内容の確認
       .purchase__confirm__product 
         .purchase__confirm__product__image
-          = image_tag src="pict-reason-03.jpg", class: "image"
+          = image_tag src="pict-reason-03.jpg", class: "images"
         .purchase__confirm__product__place
-          .purchase__confirm__product__place__name product1
+          .purchase__confirm__product__place__name #{@product.name}
           .purchase__confirm__product__place__price
             %span.shipping 送料込み(税込)
-            %p.price ￥10,000
+            %p.price  ¥
+            = @product.price.to_s(:delimited)
       .purchase__confirm__payment
         .purchase__confirm__payment__place
           .purchase__confirm__payment__place__title 支払い金額
-          .purchase__confirm__payment__place__price ￥10,000
-      -if true
+          .purchase__confirm__payment__place__price ￥#{@product.price.to_s(:delimited)}
+      -if @default_card_information.blank?
         .purchase__confirm__method
           .purchase__confirm__method__title 支払い方法
           .purchase__confirm__method__link
-            = link_to '#', class: "purchase__confirm__method__link__btn" do
+            = link_to new_creditcard_path, class: "purchase__confirm__method__link__btn" do
               = icon('fas', 'plus-circle',class: "purchase__confirm__method__link__icon")
               登録してください
       -else
@@ -31,12 +32,19 @@
           .purchase__confirm__method__title 支払い方法
           .purchase__confirm__method__card
             クレジットカード
+            .purchase__confirm__method__card__number
+              = "**** **** **** " + @default_card_information.last4
+            .purchase__confirm__method__card__month
+              有効期限
+              - exp_month = @default_card_information.exp_month.to_s
+              - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+              = exp_month + " / " + exp_year
           .purchase__confirm__method__link
-            = link_to '#', class: "purchase__confirm__method__link__btn" do
+            = link_to card_mypage_index_path, class: "purchase__confirm__method__link__btn" do
               = icon('fas', 'plus-circle',class: "purchase__confirm__method__link__icon")
               編集する
 
-      -if true
+      -if @user.address.blank?
         .purchase__confirm__delivery
           .purchase__confirm__delivery__title 配送先
           .purchase__confirm__delivery__link
@@ -47,21 +55,29 @@
         .purchase__confirm__delivery
           .purchase__confirm__delivery__title 配送先
           .purchase__confirm__delivery__addres
-            福岡県福岡市天神1-1-1
+            = @user.address.prefecture.name + @user.address.city + @user.address.house_number
           .purchase__confirm__delivery__link
             = link_to '#', class: "purchase__confirm__delivery__link__btn" do
               = icon('fas', 'plus-circle',class: "purchase__confirm__delivery__link__icon")
               変更する
         
-      -if true
+      -if @user.address.blank? && @default_card_information.blank?
         .purchase__confirm__buy
           .purchase__confirm__buy__error 配送先と支払い方法の入力を完了してください。
+          .purchase__confirm__buy__button 購入する
+      -elsif @user.address.blank?
+        .purchase__confirm__buy
+          .purchase__confirm__buy__error 配送先の入力を完了してください。
+          .purchase__confirm__buy__button 購入する
+      -elsif @default_card_information.blank?
+        .purchase__confirm__buy
+          .purchase__confirm__buy__error 支払い方法の入力を完了してください。
           .purchase__confirm__buy__button 購入する
       -else
         .purchase__confirm__buy
           .purchase__confirm__buy__button__normal
-            = link_to '#', class: "purchase__confirm__buy__button__red" do
-              購入する
+            = link_to pay_orders_path, {method: :post, class: "purchase__confirm__buy__button__red"} do
+              購入
   .purchase__footer
     .purchase__footer__content
       %ul.purchase__footer__content__list
@@ -77,7 +93,7 @@
     .purchase__footer__drscription
       .purchase__footer__drscription__logo
         = link_to '/' do
-          = image_tag "logo-black.png", class: "image"
+          = image_tag "logo-black.png", class: "images"
         %p.purchase__footer__drscription__text © FURIMA
 
 

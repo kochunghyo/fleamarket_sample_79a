@@ -1,0 +1,83 @@
+.mypage__payment{
+  width:700px;
+  height: 100%;
+  flex-direction:row-reverse;
+  margin-top: 40px;
+  background-color: white;
+  &__title{
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+    height: 15vh;
+    line-height: 15vh;
+  }
+  &__box{
+    width: 700px;
+    border-bottom: solid 1px #eee;
+    margin: 0 auto;
+  }
+  &__card{
+    &__box{
+      margin: 30px;
+      text-align: center;
+    }
+    &__error{
+      margin-bottom: 5%;
+      color:  #ff0211;
+      font-size: 18px;
+    }
+    &__add{
+      &__btn{
+        text-decoration: none;
+        color: #0095EE;
+        font-size: 14px;
+        font-weight: lighter;
+        &:hover{
+          text-decoration: underline #0095EE;
+          opacity: 0.7;
+        }
+        &:hover > .mypage__payment__card__entry__icon{
+          opacity: 0.7;
+        }
+      }
+      &__icon{
+        color: #0095EE;
+        font-size: 14px;
+        &:hover {
+          text-decoration: underline #555555;
+          color: #888888;
+        }
+      }
+    }
+    &__information{
+      display: flex;
+      justify-content: center;
+      &__box{
+        margin-right: 10%;
+        margin-left: 20%;
+      }
+    }
+    &__entry{
+      font-size: 18px;
+      margin-bottom: 5%;
+      &__num{
+        font-size: 15px;
+        margin-bottom: 1%;
+      }
+      &__time{
+        font-size: 15px;
+      }
+      &__delete{
+        margin-top: 1.5%;
+      }
+    }
+  }
+}
+.credit{
+  color: #3CCACE;
+  background-color: white;
+  border: solid 1px #3CCACE;
+  border-radius: 3px;
+  padding: 5px;
+}
