@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_10_13_035420) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.string "ancestry", null: false
+    t.string "ancestry"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -45,14 +45,16 @@ ActiveRecord::Schema.define(version: 2020_10_13_035420) do
     t.text "explanation", null: false
     t.string "brand"
     t.integer "price", null: false
-    t.bigint "user_id"
     t.bigint "category_id", null: false
     t.bigint "status_id", null: false
     t.bigint "delivery_fee_id", null: false
     t.bigint "shipping_area_id", null: false
     t.bigint "shipping_day_id", null: false
+    t.bigint "buyer_id"
+    t.bigint "seller_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["seller_id"], name: "index_products_on_seller_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -74,4 +76,5 @@ ActiveRecord::Schema.define(version: 2020_10_13_035420) do
   end
 
   add_foreign_key "images", "products"
+  add_foreign_key "products", "users", column: "seller_id"
 end
