@@ -24,7 +24,7 @@
         .purchase__confirm__method
           .purchase__confirm__method__title 支払い方法
           .purchase__confirm__method__link
-            = link_to new_creditcard_path, class: "purchase__confirm__method__link__btn" do
+            = link_to card_mypage_index_path, class: "purchase__confirm__method__link__btn" do
               = icon('fas', 'plus-circle',class: "purchase__confirm__method__link__icon")
               登録してください
       -else
@@ -42,7 +42,7 @@
           .purchase__confirm__method__link
             = link_to card_mypage_index_path, class: "purchase__confirm__method__link__btn" do
               = icon('fas', 'plus-circle',class: "purchase__confirm__method__link__icon")
-              編集する
+              変更する
 
       -if @user.address.blank?
         .purchase__confirm__delivery
