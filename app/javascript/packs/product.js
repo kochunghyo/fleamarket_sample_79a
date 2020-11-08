@@ -1,6 +1,6 @@
 
 //画像投稿
-$(document).on('turbolinks:load', ()=> {
+$(function(){
   const buildFileField = (num)=> {
     const html = `<div data-index="${num}" class="js-file_group">
                     <input class="js-file" type="file"
@@ -19,32 +19,34 @@ $(document).on('turbolinks:load', ()=> {
   lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
 
+  $('.hidden-destroy').hide();
 
-
-  $('.image-box').on('change', '.js-file', function(e) {
+  $('#image-box').on('change', '.js-file', function(e) {
     const targetIndex = $(this).parent().data('index');
-    // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
-    // 該当indexを持つimgタグがあれば取得して変数imgに入れる(画像変更の処理)
+
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
-      img.setAttribute('image', blobUrl);
-    } else {  // 新規画像追加の処理
+      img.setAttribute('src', blobUrl);
+    } else {  
       $('.previews').append(buildImg(targetIndex, blobUrl));
-      // fileIndexの先頭の数字を使ってinputを作る
-      $('.image-box').append(buildFileField(fileIndex[0]));
+      $('#image-box').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
-      // 末尾の数に1足した数を追加する
-      fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+      fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }
   });
 
-  $('.image-box').on('click', '.js-remove', function() {
+  $('#image-box').on('click', '.js-remove', function() {
+    const targetIndex = $(this).parent().data('index');
+    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
+    if (hiddenCheck) hiddenCheck.prop('checked', true);
+
     $(this).parent().remove();
-    if ($('.js-file').length == 0) $('.image-box').append(buildFileField(fileIndex[0]));
     $(`img[data-index="${targetIndex}"]`).remove();
-    
+
+    if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
+
   //手数料計算
   $('.input-price-box').on('input',function(){
     let tax = $('.input-price-box').val();
