@@ -45,18 +45,13 @@
               display: flex;
               position: relative;
               li{
-                display: flex;
-                flex-direction: column;
                 width: 560px;
-                align-items: center;
                 margin: 0 auto;
                 img{
                   width: 100%;
                   vertical-align: bottom;
                 }
                 ul{
-                  display: flex;
-                  justify-content: center;
                   margin-top: 10px;
                   li{
                     width: 25%;
@@ -82,6 +77,21 @@
             }
             &-detail{
               font-size: 16px;
+            }
+          }
+          &_buy{
+            padding: 0 24px;
+            margin: 24px 0 24px;
+            &-btn{
+              font-size: 24px;
+              line-height: 60px;
+              display: block;
+              margin-top: 16px;
+              background: #ea352d;
+              color: #fff;
+              text-align: center;
+              font-weight: 600;
+              text-decoration: none;
             }
           }
           &_detail{
@@ -167,6 +177,45 @@
               text-align: center;
             }
             .text-center{
+              font-size: 16px;
+              text-align: center;
+            }
+            &_btn_delete{
+              margin: 16px 0 16px 0;
+              background: #aaa;
+              border: 1px solid #aaa;
+              color: #fff;
+              text-decoration: none;
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              border-radius: 4px;
+              text-align: center;
+            }
+          }
+        }
+        details_box{
+          width: 700px;
+          margin: 0 auto;
+          &-list{
+            margin: 24px 0 24px 0;
+            background: #fff;
+            padding: 8px 16px 8px 16px;
+            &_btn_edit{
+              margin: 16px 0 16px 0;
+              background: #ea352d;
+              border: 1px solid #ea352d;
+              color: #fff;
+              text-decoration: none;
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              border-radius: 4px;
+              text-align: center;
+            }
+            &-center{
               font-size: 16px;
               text-align: center;
             }

@@ -101,7 +101,7 @@
         .body__pickup_container__products__lists__list
           - @products.each do |product|
             %ul.body__pickup_container__products__lists__list__group
-              = link_to '#', class: "body__pickup_container__products__lists__list__group__link" do
+              = link_to product_path(product.id), class: "body__pickup_container__products__lists__list__group__link" do
                 %li.body__pickup_container__products__lists__list__group__link__images
                   = image_tag product.images.first.image.url, class: "img"
                 %li.body__pickup_container__products__lists__list__group__link__content
@@ -128,7 +128,7 @@
         .body__pickup_container__products__lists__list
           - @products.each do |product|
             %ul.body__pickup_container__products__lists__list__group
-              = link_to '#', class: "body__pickup_container__products__lists__list__group__link" do
+              = link_to product_path(product.id), class: "body__pickup_container__products__lists__list__group__link" do
                 %li.body__pickup_container__products__lists__list__group__link__images
                   = image_tag product.images.first.image.url, class: "img"
                 %li.body__pickup_container__products__lists__list__group__link__content
