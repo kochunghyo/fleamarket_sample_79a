@@ -45,6 +45,10 @@ class ProductsController < ApplicationController
   def edit
   end
 
+  def show
+    @category = Category.find(params[:id])
+  end
+  
   def update
     if @product.update(product_params)
       redirect_to root_path
