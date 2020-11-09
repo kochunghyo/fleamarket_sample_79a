@@ -95,12 +95,12 @@
                       ログアウト
                       =icon('fas', 'chevron-right', class: "i")
     .mypage__payment
-      %h2 クレジットカード情報入力
+      %h2.credit_title クレジットカード情報入力
       .creditcard
         = form_tag(pay_creditcard_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
           .creditcard__label
             .card
-              %label カード番号 
+              %label.card_information カード番号 
               %a.check 必須
           .creditcard__number
             = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number",autocomplete: 'off'
@@ -114,16 +114,16 @@
             = image_tag src="https://web-jp-assets.mercdn.net/_next/static/images/discover-879b0b1c9f9a30159f09e9ef492ad349.svg", size: "37x24",class:"image_tag"
           .creditcard__label
             .deadline
-              %label 有効期限
+              %label.card_information 有効期限
               %a.check 必須
           .choice
-            = select_tag "exp_month", options_from_collection_for_select(CreditcardMonth.all, :value, :name), id: "exp_month"
+            = select_tag "exp_month", options_from_collection_for_select(CreditcardMonth.all, :value, :name), id: "exp_month" ,class:"credit_month_select"
             %span 月    
-            = select_tag "exp_year", options_from_collection_for_select(CreditcardYear.all, :value, :name), id: "exp_year"
+            = select_tag "exp_year", options_from_collection_for_select(CreditcardYear.all, :value, :name), id: "exp_year",class:"credit_month_select"
             %span.month 年
           .creditcard__label
             .code
-              %label セキュリティコード
+              %label.card_information セキュリティコード
               %a.check 必須
           = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
           #card_token

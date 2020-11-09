@@ -1,12 +1,11 @@
 class CreditcardController < ApplicationController
   require "payjp"
-
   def new
     card = Creditcard.where(user_id: current_user.id)
     redirect_to action: "show" if card.exists?
   end
 
-  def pay #payjpとCardのデータベース作成を実施します。
+  def pay 
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params['payjp-token'].blank?
       redirect_to action: "new"
@@ -14,7 +13,7 @@ class CreditcardController < ApplicationController
       customer = Payjp::Customer.create(
       card: params['payjp-token'],
       metadata: {user_id: current_user.id}
-      ) #念の為metadataにuser_idを入れましたがなくてもOK
+      ) 
       @card = Creditcard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
         redirect_to controller: :mypage, action: :card
@@ -24,7 +23,7 @@ class CreditcardController < ApplicationController
     end
   end
 
-  def delete #PayjpとCardデータベースを削除します
+  def delete 
     card = Creditcard.where(user_id: current_user.id).first
     if card.blank?
     else
@@ -36,7 +35,7 @@ class CreditcardController < ApplicationController
       redirect_to controller: :mypage, action: :card
   end
 
-  def show #Cardのデータpayjpに送り情報を取り出します
+  def show 
     card = Creditcard.where(user_id: current_user.id).first
     if card.blank?
       redirect_to action: "new" 

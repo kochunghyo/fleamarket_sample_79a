@@ -54,8 +54,8 @@
       display: flex;
       justify-content: center;
       &__box{
-        margin-right: 10%;
-        margin-left: 20%;
+        margin-right: 8%;
+        margin-left: 15%;
       }
     }
     &__entry{
@@ -63,15 +63,24 @@
       margin-bottom: 5%;
       &__num{
         font-size: 15px;
-        margin-bottom: 1%;
+        margin-bottom: 2%;
+        text-align: left;
       }
       &__time{
         font-size: 15px;
+        text-align: left;
+      }
+      &__image{
+        text-align: left;
+        margin-top: 3%;
       }
       &__delete{
-        margin-top: 1.5%;
+        margin-top: 3.5%;
       }
     }
+  }
+  &__image{
+    width: 30%;
   }
 }
 .credit{

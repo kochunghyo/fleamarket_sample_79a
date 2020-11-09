@@ -17,7 +17,7 @@ a.check{
   display: inline;
   margin: 8px;
 }
-h2{
+.credit_title{
   font-size: 1.5rem;
   border-bottom: solid 1px #EEE;
   padding: 32px 16px;
@@ -55,7 +55,7 @@ h2{
 .choice{
 
 }
-select{
+select.credit_month_select{
   margin-top: 16px;
   height: 48px;
   width: 19%;
@@ -108,7 +108,7 @@ span.month{
 .creditcard__number{
   margin: 0 auto;
 }
-label{
+label.card_information{
   margin-left: 2%;
   font-size: 0.9rem;
 }
