@@ -51,11 +51,15 @@ ActiveRecord::Schema.define(version: 2020_11_08_060614) do
     t.bigint "shipping_area_id", null: false
     t.bigint "shipping_day_id", null: false
     t.bigint "buyer_id"
-    t.bigint "seller_id"
+    t.bigint "seller_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+
     t.integer "categories_id"
     t.index ["categories_id"], name: "index_products_on_categories_id"
+
+    t.index ["seller_id"], name: "index_products_on_seller_id"
+
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -77,4 +81,5 @@ ActiveRecord::Schema.define(version: 2020_11_08_060614) do
   end
 
   add_foreign_key "images", "products"
+  add_foreign_key "products", "users", column: "seller_id"
 end
