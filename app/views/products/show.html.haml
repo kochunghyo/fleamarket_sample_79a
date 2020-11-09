@@ -17,7 +17,7 @@
         .main_content_right-top
           .item_box
             %h2.item_box_name
-              products3
+              = @product.name
             .item_box_body
               %ul
                 %li
@@ -30,7 +30,8 @@
                     %li
                       = image_tag("https://pro-foto.jp/free/img/images_big/kid0103-001.jpg" , class: "item_box_img")
             .item_box_price
-              %span ¥30000
+              %span 
+                = @product.price
               .item_box_price-detail
                 %span (税込)
                 %span 送料込み
@@ -45,9 +46,13 @@
                     %th カテゴリー
                     %td
                       = link_to "#" , class: "item_box_table_link" do
-                        ベビー
+                        = @product.category.root.name
+                        %br
                       = link_to "#" , class: "item_box_table_link" do
-                        アウター
+                        = @product.category.parent.name
+                        %br
+                      = link_to "#" , class: "item_box_table_link" do
+                        = @product.category.name
                   %tr
                     %th ブランド
                     %td
