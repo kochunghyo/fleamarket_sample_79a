@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_action :set_product, except: [:index, :new, :create,  :get_category_children, :get_category_grandchildren]
+  before_action :set_product, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
 
   def index
     @products = Product.includes(:images).order("created_at DESC").limit(5)
@@ -34,17 +34,12 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
     @parents = Category.all.order("id ASC").limit(733)
   end
 
   def edit
   end
 
-  def show
-    @category = Category.find(params[:id])
-  end
-  
   def update
     if @product.update(product_params)
       redirect_to root_path
