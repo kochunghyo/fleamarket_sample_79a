@@ -44,7 +44,7 @@
               = icon('fas', 'plus-circle',class: "purchase__confirm__method__link__icon")
               変更する
 
-      -if @user.address.blank?
+      -if current_user.address.blank?
         .purchase__confirm__delivery
           .purchase__confirm__delivery__title 配送先
           .purchase__confirm__delivery__link
@@ -52,20 +52,20 @@
               = icon('fas', 'plus-circle',class: "purchase__confirm__delivery__link__icon")
               登録してください
       - else
-        .purchase__confirm__delivery
+        .purchase__confirm__delivery 
           .purchase__confirm__delivery__title 配送先
           .purchase__confirm__delivery__addres
-            = @user.address.prefecture.name + @user.address.city + @user.address.house_number
+            = current_user.address.prefecture.name + current_user.address.city + current_user.address.house_number
           .purchase__confirm__delivery__link
             = link_to '#', class: "purchase__confirm__delivery__link__btn" do
               = icon('fas', 'plus-circle',class: "purchase__confirm__delivery__link__icon")
               変更する
         
-      -if @user.address.blank? && @default_card_information.blank?
+      -if current_user.address.blank? && @default_card_information.blank?
         .purchase__confirm__buy
           .purchase__confirm__buy__error 配送先と支払い方法の入力を完了してください。
           .purchase__confirm__buy__button 購入する
-      -elsif @user.address.blank?
+      -elsif current_user.address.blank?
         .purchase__confirm__buy
           .purchase__confirm__buy__error 配送先の入力を完了してください。
           .purchase__confirm__buy__button 購入する

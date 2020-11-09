@@ -25,17 +25,14 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :creditcard, only: [:new, :show] do
+  resources :creditcard, only: [:new, :show, :destroy] do
     collection do
-      post 'show', to: 'creditcard#show'
       post 'pay', to: 'creditcard#pay'
-      post 'delete', to: 'creditcard#delete'
     end
   end
 
-  resources :orders, only: [:new] do
+  resources :orders, only: [:index,:new] do
     collection do
-      get 'index', to: 'orders#index'
       post 'pay', to: 'orders#pay'
       get 'done', to: 'orders#done'
     end

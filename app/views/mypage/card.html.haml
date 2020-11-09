@@ -124,7 +124,7 @@
               .mypage__payment__card__entry__image
                 = image_tag src= @card_src,class:"mypage__payment__image"
             .mypage__payment__card__entry__delete
-              = form_tag(delete_creditcard_index_path, method: :post, id: 'charge-form',  name: "inputForm",data: { confirm: "クレジットカード情報を削除しますか？" }) do
+              = form_tag(creditcard_path(@card.id), method: :delete, id: 'charge-form',  name: "inputForm",data: { confirm: "クレジットカード情報を削除しますか？" }) do
                 %input{ type: "hidden", name: "card_id", value: "" }
                 %button.credit 削除する
 

@@ -1,15 +1,15 @@
 class MypageController < ApplicationController
 
+  before_action :set_card, only: [:card,:card_new]
 
   def index
   end
   
   def card
-    card = Creditcard.where(user_id: current_user.id).first
-    if card.present?
+    if @card.present?
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
 
       @card_brand = @default_card_information.brand
       case @card_brand
@@ -30,11 +30,13 @@ class MypageController < ApplicationController
   end
 
   def card_new
-    card = Creditcard.where(user_id: current_user.id).first
-    redirect_to action: "card" if card.present?
+    @card = Creditcard.where(user_id: current_user.id).first
+    redirect_to action: "card" if @card.present?
   end
 
-  
+  def set_card
+    @card = Creditcard.find_by(user_id: current_user.id)
+  end
 
 
 end
