@@ -9,7 +9,7 @@
       .purchase__confirm__title 購入内容の確認
       .purchase__confirm__product 
         .purchase__confirm__product__image
-          = image_tag src="pict-reason-03.jpg", class: "images"
+          = image_tag src=@product.images.first.image.url, class: "images"
         .purchase__confirm__product__place
           .purchase__confirm__product__place__name #{@product.name}
           .purchase__confirm__product__place__price
