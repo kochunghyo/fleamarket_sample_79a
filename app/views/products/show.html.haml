@@ -22,13 +22,6 @@
               %ul
                 %li
                   = image_tag @product.images.first.image.url, class: "item_box_img"
-                  -# %ul
-                  -#   %li
-                  -#     = image_tag @product.images.second.image.url, class: "item_box_img"
-                  -#   %li
-                  -#     = image_tag @product.images.third.image.url, class: "item_box_img"
-                  -#   %li
-                      -# = image_tag @product.images.first.image.url, class: "item_box_img"
             .item_box_price
               %span
                 = @product.price
