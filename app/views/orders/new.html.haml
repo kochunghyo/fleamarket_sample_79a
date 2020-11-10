@@ -39,6 +39,8 @@
               - exp_month = @default_card_information.exp_month.to_s
               - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
               = exp_month + " / " + exp_year
+            .purchase__confirm__method__card__icon
+              = image_tag src= @card_src,class:"purchase__confirm__method__card__icon__image"
           .purchase__confirm__method__link
             = link_to card_mypage_index_path, class: "purchase__confirm__method__link__btn" do
               = icon('fas', 'plus-circle',class: "purchase__confirm__method__link__icon")
@@ -54,8 +56,12 @@
       - else
         .purchase__confirm__delivery 
           .purchase__confirm__delivery__title 配送先
+          .purchase__confirm__delivery__postcode
+            〒#{current_user.address.post_code.to_s.insert(3, "-")}
           .purchase__confirm__delivery__addres
             = current_user.address.prefecture.name + current_user.address.city + current_user.address.house_number
+          .purchase__confirm__delivery__name
+            = current_user.first_name + current_user.last_name
           .purchase__confirm__delivery__link
             = link_to '#', class: "purchase__confirm__delivery__link__btn" do
               = icon('fas', 'plus-circle',class: "purchase__confirm__delivery__link__icon")

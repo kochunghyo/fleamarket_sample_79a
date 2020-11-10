@@ -91,6 +91,19 @@
         font-weight: bold;
         margin-bottom: 16px;
       }
+      &__card{
+        &__number{
+          margin-top: 1%;
+          
+        }
+        &__icon{
+          margin-bottom: 1%;
+          margin-top: 2%;
+          &__image{
+            width: 14%;
+          }
+        }
+      }
       &__link{
         &__btn{
           text-decoration: none;
@@ -119,7 +132,11 @@
         font-weight: bold;
         margin-bottom: 16px;
       }
+      &__postcode{
+        
+      }
       &__link{
+        margin-top: 1%;
         &__btn{
           text-decoration: none;
           color: #0095EE;
