@@ -1,8 +1,7 @@
 class OrdersController < ApplicationController
 
-  require 'payjp'
-  before_action :set_card, only: [:new,:pay]
   before_action :set_product, only: [:new,:pay]
+  before_action :set_card, only: [:new,:pay]
 
   def new
     if @card.present?
@@ -27,7 +26,7 @@ class OrdersController < ApplicationController
   end
 
   def set_product
-    @product = Product.find(1)
+    @product = Product.find(params[:id])
   end
 
 end

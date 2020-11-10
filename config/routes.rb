@@ -17,8 +17,7 @@ Rails.application.routes.draw do
       
     end
   end
-  resources :orders, only: :new
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
   
   resources :mypage, only: :index do
     collection do
@@ -33,8 +32,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :orders, only: [:index,:new] do
-    collection do
+  resources :orders, only: [:index] do
+    member do
+      get 'new', to: 'orders#new'
       post 'pay', to: 'orders#pay'
       get 'done', to: 'orders#done'
     end
