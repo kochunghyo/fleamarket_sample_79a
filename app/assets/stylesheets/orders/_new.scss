@@ -62,6 +62,7 @@
         font-size: 15px;
         margin-left: 10px;
         font-weight: bold;
+        font-family: number;
       }
     }
     .purchase__confirm__payment{
@@ -78,6 +79,7 @@
         &__price{
           font-size: 24px;
           font-weight: bold;
+          font-family: number;
         }
       }
     }
@@ -95,6 +97,13 @@
           color: #0095EE;
           font-size: 14px;
           font-weight: lighter;
+          &:hover{
+            text-decoration: underline #0095EE;
+            opacity: 0.7;
+          }
+          &:hover > .purchase__confirm__method__link__icon{
+            opacity: 0.8;
+          }
         }
         &__icon{
           color: #0095EE;
@@ -116,6 +125,13 @@
           color: #0095EE;
           font-size: 14px;
           font-weight: lighter;
+          &:hover{
+            text-decoration: underline #0095EE;
+            opacity: 0.7;
+          }
+          &:hover > .purchase__confirm__delivery__link__icon{
+            opacity: 0.8;
+          }
         }
         &__icon{
           color: #0095EE;
