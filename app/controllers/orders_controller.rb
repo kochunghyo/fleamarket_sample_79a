@@ -19,7 +19,9 @@ class OrdersController < ApplicationController
     :customer => @card.customer_id, 
     :currency => 'jpy', 
   )
-  redirect_to root_path 
+
+    @product.update(sales_status: "sold_out")
+    redirect_to root_path 
   end
 
   def set_card
