@@ -104,6 +104,9 @@
               = link_to product_path(product), class: "body__pickup_container__products__lists__list__group__link" do
                 %li.body__pickup_container__products__lists__list__group__link__images
                   = image_tag product.images.first.image.url, class: "img"
+                  -if product.sales_status == 'sold_out'
+                    .sold_out__box
+                      .sold_out__box__text SOLD
                 %li.body__pickup_container__products__lists__list__group__link__content
                   %h3.body__pickup_container__products__lists__list__group__link__content__name
                     = product.name
@@ -131,6 +134,9 @@
               = link_to product_path(product.id), class: "body__pickup_container__products__lists__list__group__link" do
                 %li.body__pickup_container__products__lists__list__group__link__images
                   = image_tag product.images.first.image.url, class: "img"
+                  -if product.sales_status == 'sold_out'
+                    .sold_out__box
+                      .sold_out__box__text SOLD
                 %li.body__pickup_container__products__lists__list__group__link__content
                   %h3.body__pickup_container__products__lists__list__group__link__content__name
                     = product.name
