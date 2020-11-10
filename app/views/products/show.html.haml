@@ -19,16 +19,13 @@
             %h2.item_box_name
               =@product.name
             .item_box_body
-              %ul
-                %li
-                  = image_tag @product.images.first.image.url, class: "item_box_img"
-                  %ul
-                    %li
-                      = image_tag @product.images.second.image.url, class: "iten_box_img"
-                    %li
-                      = image_tag @product.images.third.image.url, class: "item_box_img"
-                    %li
-                      -# = image_tag @product.images.first.image.url, class: "item_box_img"
+              %ul.item_box_body_lists
+                %li.item_box_body_lists_top
+                  = image_tag @product.images.first.image.url
+                  %ul.item_box_body_lists_list
+                    - @product.images.each do |image|
+                      %li.item_box_body_lists_list_img
+                        = image_tag image.image.url
             .item_box_price
               %span
                 = @product.price
