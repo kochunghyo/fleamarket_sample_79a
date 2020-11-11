@@ -17,20 +17,19 @@
         .main_content_right-top
           .item_box
             %h2.item_box_name
-
               = @product.name
-
             .item_box_body
               %ul
                 %li
-                  = image_tag @product.images.first.image.url, class: "item_box_img"
+                  -# = image_tag @product.images.first.image.url
                   %ul
-                    %li
-                      = image_tag @product.images.second.image.url, class: "iten_box_img"
-                    %li
-                      = image_tag @product.images.third.image.url, class: "item_box_img"
-                    %li
-                      -# = image_tag @product.images.first.image.url, class: "item_box_img"
+                    -# - @product.images.each do |image|
+                      %li
+                        -# = image_tag image.image.url
+                    -# %li
+                    -#   = image_tag product.images.third.image.url, class: "item_box_img"
+                    -# %li
+                    -#   = image_tag product.images.first.image.url, class: "item_box_img"
             .item_box_price
               %span 
                 = @product.price
@@ -38,12 +37,12 @@
                 %span (税込)
                 %span 送料込み
             .item_box_buy
-            -if user_signed_in? && current_user.id != @product.seller_id
-              = link_to "購入画面に進む", new_order_path, class: "item_box_buy-btn"
-            -unless user_signed_in?
-              = link_to "購入画面に進む", new_user_session_path, class: "item_box_buy-btn"
-            .item_box_detail
-              =@product.explanation
+            -# -if user_signed_in? && current_user.id != @product.seller_id
+            -#   = link_to "購入画面に進む", new_order_path, class: "item_box_buy-btn"
+            -# -unless user_signed_in?
+            -#   = link_to "購入画面に進む", new_user_session_path, class: "item_box_buy-btn"
+            -# .item_box_detail
+            -#   =@product.explanation
             .item_box_table
               %table
                 %tbody
@@ -95,11 +94,11 @@
           -if user_signed_in? && current_user.id == @product.seller_id
             .details_box
               .details_box-list
-                = link_to "#" , class: "details_box-list_btn_edit" do
+                = link_to edit_product_path(@product.id), class: "details_box-list_btn_edit" do
                   商品の編集
                 %p.details_box-list-center
                   or
-                = link_to "#" , class: "details_box-list_btn_delete" do
+                = link_to "#", class: "details_box-list_btn_delete" do
                   この商品を削除する
           .comment_box
             %ul.comment_box_contents
