@@ -17,9 +17,7 @@
         .main_content_right-top
           .item_box
             %h2.item_box_name
-
               = @product.name
-
             .item_box_body
               %ul
                 %li
@@ -91,11 +89,11 @@
           -if user_signed_in? && current_user.id == @product.seller_id
             .details_box
               .details_box-list
-                = link_to "#" , class: "details_box-list_btn_edit" do
+                = link_to edit_product_path(@product.id), class: "details_box-list_btn_edit" do
                   商品の編集
                 %p.details_box-list-center
                   or
-                = link_to "#" , class: "details_box-list_btn_delete" do
+                = link_to product_path(@product.id) , method: :delete, class: "details_box-list_btn_delete" do
                   この商品を削除する
           .comment_box
             %ul.comment_box_contents

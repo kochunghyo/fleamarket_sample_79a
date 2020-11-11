@@ -103,10 +103,6 @@ describe User do
       user.valid?
       expect(user.errors[:first_name_kana]).to include("は全角カナで入力してください")
     end
-
-
-
-
-
+    
   end
 end
