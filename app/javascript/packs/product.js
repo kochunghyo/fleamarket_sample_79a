@@ -39,10 +39,13 @@ $(function(){
   $('#image-box').on('click', '.js-remove', function() {
     const targetIndex = $(this).parent().data('index');
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
+    let index = $('.js-remove').index(this);
     if (hiddenCheck) hiddenCheck.prop('checked', true);
 
+    if ($('.js-file').length > index + 1){
     $(this).parent().remove();
     $(`img[data-index="${targetIndex}"]`).remove();
+    };
 
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
