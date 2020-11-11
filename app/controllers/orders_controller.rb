@@ -25,18 +25,24 @@ class OrdersController < ApplicationController
         @card_src = "https://web-jp-assets.mercdn.net/_next/static/images/discover-879b0b1c9f9a30159f09e9ef492ad349.svg"
       end
     end
+      redirect_to root_path if @product.sales_status == 'sold_out'
   end
 
   def pay
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
-    Payjp::Charge.create(
-    :amount => @product.price, 
-    :customer => @card.customer_id, 
-    :currency => 'jpy', 
-  )
+    
+    if @product.sales_status != 'sold_out'
+      Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+      Payjp::Charge.create(
+      :amount => @product.price, 
+      :customer => @card.customer_id, 
+      :currency => 'jpy', 
+    )
 
-    @product.update(sales_status: "sold_out")
-    redirect_to root_path 
+      @product.update(sales_status: "sold_out")
+      redirect_to root_path 
+    else
+      redirect_to controller: :products, action: :show
+    end
   end
 
   def set_card

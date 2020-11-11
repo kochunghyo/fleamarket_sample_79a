@@ -29,7 +29,10 @@
                 %span (税込)
                 %span 送料込み
             .item_box_buy
-            -if user_signed_in? && current_user.id != @product.seller_id
+            -if @product.sales_status == 'sold_out'
+              .item_box_buy-btn__sold
+                売り切れました
+            -elsif user_signed_in? && current_user.id != @product.seller_id
               = link_to "購入画面に進む", order_path(@product.id), class: "item_box_buy-btn"
             -unless user_signed_in?
               = link_to "購入画面に進む", new_user_session_path, class: "item_box_buy-btn"
