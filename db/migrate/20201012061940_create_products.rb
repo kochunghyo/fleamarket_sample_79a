@@ -11,7 +11,6 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.bigint :delivery_fee_id, null: false, foreign_key: true
       t.bigint :shipping_area_id, null: false, foreign_key: true
       t.bigint :shipping_day_id, null: false, foreign_key: true
-      # t.bigint :buyer_id, foreign_key: true
       t.references :seller, null:false, foreign_key: { to_table: :users }
       t.timestamps null: false
     end
