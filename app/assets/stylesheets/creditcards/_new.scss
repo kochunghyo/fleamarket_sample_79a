@@ -1,0 +1,114 @@
+.number{
+  margin-top: 16px;
+  margin-bottom: 5px;
+  height: 48px;
+  width: 50%;
+  padding: 0 16px;
+  border: solid 1px #CCC;
+  border-radius: 4px;
+  font-size: 1.2rem;
+}
+a.check{
+  background-color:  #3CCACE;
+  border-radius: 2px;
+  color: white;
+  padding: 2px 4px;
+  font-size: 0.7rem;
+  display: inline;
+  margin: 8px;
+}
+.credit_title{
+  font-size: 1.5rem;
+  border-bottom: solid 1px #EEE;
+  padding: 32px 16px;
+  text-align: center;
+  font-weight: bold;
+}
+.image{
+  padding-bottom: 3%;
+}
+.cvc{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.submit{
+  background-color: #3CCACE;
+  color: white;
+  border: solid 1px;
+  text-decoration: none;
+  border-radius: 5px;
+  height: 48px;
+  width: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.card{
+  font-weight: bold;
+  font-size: 18px;
+  font-style: inherit;
+  padding-top: 32px;
+}
+.deadline{
+  font-weight: bold;
+  font-size: 18px;
+}
+.choice{
+
+}
+select.credit_month_select{
+  margin-top: 16px;
+  height: 48px;
+  width: 19%;
+  margin-left: 2%;
+  margin-right: 2%;
+  padding-left: 16px;
+  font-size: 1.1rem;
+  border: solid 1px #CCC;
+  border-radius: 4px;
+  padding: 10px;
+}
+span.month{
+  margin-right: 16px;
+}
+.code{
+  margin-top: 28px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.cvc{
+  margin-top: 16px;
+  margin-bottom: 60px;
+  height: 48px;
+  width: 50%;
+  border: solid 1px #CCC;
+  border-radius: 4px;
+  font-size: 18px;
+  padding: 0 16px;
+}
+.image_tag{
+  margin: 5px;
+}
+.link{
+  text-align: center;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+.back{
+  text-decoration: none;
+  color: #0095EE;
+}
+.creditcard{
+  text-align: center;
+  &__label{
+    margin: 0 auto;
+    width: calc(55% - 32px);
+    text-align: left;
+  }
+}
+.creditcard__number{
+  margin: 0 auto;
+}
+label.card_information{
+  margin-left: 2%;
+  font-size: 0.9rem;
+}

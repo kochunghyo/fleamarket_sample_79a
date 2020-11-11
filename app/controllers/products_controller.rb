@@ -13,10 +13,6 @@ class ProductsController < ApplicationController
     else
       redirect_to new_user_session_path
     end
-    @category_parent_array = []
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent
-    end
   end
 
   def get_category_children
@@ -37,13 +33,13 @@ class ProductsController < ApplicationController
     end
   end
 
+  def show
+    @parents = Category.all.order("id ASC").limit(733)
+  end
+
   def edit
   end
 
-  def show
-    @category = Category.find(params[:id])
-  end
-  
   def update
     if @product.update(product_params)
       redirect_to root_path

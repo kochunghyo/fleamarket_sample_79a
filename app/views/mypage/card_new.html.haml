@@ -1,0 +1,135 @@
+.wrapper
+  = render "header"
+  .mypage__body
+    .l-side
+      %nav.mypage__nav
+        %ul.mypage__nav__list
+          %li.mypage__nav__list--tab.list-title
+            =link_to "#", class: "mypage__nav__list--item" do
+              マイページ
+              =icon('fas', 'chevron-right', class: "i")
+          %li.mypage__nav__list--tab
+            =link_to "#", class: "mypage__nav__list--item" do
+              お知らせ
+              =icon('fas', 'chevron-right', class: "i")
+          %li.mypage__nav__list--tab
+            =link_to "#", class: "mypage__nav__list--item" do
+              下書き一覧
+              =icon('fas', 'chevron-right', class: "i")
+          %li.mypage__nav__list--tab
+            =link_to "#", class: "mypage__nav__list--item" do
+              出品する
+              =icon('fas', 'chevron-right', class: "i")
+          %li.mypage__nav__list--tab
+            =link_to "#", class: "mypage__nav__list--item" do
+              出品した商品-出品中
+              =icon('fas', 'chevron-right', class: "i")
+          %li.mypage__nav__list--tab
+            =link_to "#", class: "mypage__nav__list--item" do
+              出品した商品-取引中
+              =icon('fas', 'chevron-right', class: "i")
+          %li.mypage__nav__list--tab
+            =link_to "#", class: "mypage__nav__list--item" do
+              出品した商品-売約済み
+              =icon('fas', 'chevron-right', class: "i")
+          %li.mypage__nav__list--tab
+            =link_to "#", class: "mypage__nav__list--item" do
+              購入した商品-取引中
+              =icon('fas', 'chevron-right', class: "i")
+          %li.mypage__nav__list--tab
+            =link_to "#", class: "mypage__nav__list--item" do
+              購入した商品-過去の取引
+              =icon('fas', 'chevron-right', class: "i")
+          %li.mypage__nav__list--tab
+            =link_to "#", class: "mypage__nav__list--item" do
+              評価一覧
+              =icon('fas', 'chevron-right', class: "i")
+          %li.mypage__nav__list--tab
+            =link_to "#", class: "mypage__nav__list--item" do
+              ガイド
+              =icon('fas', 'chevron-right', class: "i")
+          %li.mypage__nav__list--tab
+            =link_to "#", class: "mypage__nav__list--item" do
+              お問い合わせ
+              =icon('fas', 'chevron-right', class: "i")
+          %h3.mypage__nav--head 
+            フリペイ
+            %ul.mypage__nav__list
+              %li.mypage__nav__list--tab
+                =link_to "#", class: "mypage__nav__list--item" do
+                  売上・振込申請
+                  =icon('fas', 'chevron-right', class: "i")
+              %li.mypage__nav__list--tab
+                =link_to "#", class: "mypage__nav__list--item" do
+                  ポイント
+                  =icon('fas', 'chevron-right', class: "i")
+              %h3.mypage__nav--head
+                設定
+                %ul.mypage__nav__list
+                  %li.mypage__nav__list--tab
+                    =link_to "#", class: "mypage__nav__list--item" do
+                      プロフィール
+                      =icon('fas', 'chevron-right', class: "i")
+                  %li.mypage__nav__list--tab
+                    =link_to "#", class: "mypage__nav__list--item" do
+                      発送元・お届け先住所変更
+                      =icon('fas', 'chevron-right', class: "i")
+                  %li.mypage__nav__list--tab
+                    =link_to card_mypage_index_path, class: "mypage__nav__list--item" do
+                      支払い方法
+                      =icon('fas', 'chevron-right', class: "i")
+                  %li.mypage__nav__list--tab
+                    =link_to "#", class: "mypage__nav__list--item" do
+                      メール/パスワード
+                      =icon('fas', 'chevron-right', class: "i")
+                  %li.mypage__nav__list--tab
+                    =link_to "#", class: "mypage__nav__list--item" do
+                      本人情報
+                      =icon('fas', 'chevron-right', class: "i")
+                  %li.mypage__nav__list--tab
+                    =link_to "#", class: "mypage__nav__list--item" do
+                      電話番号の確認
+                      =icon('fas', 'chevron-right', class: "i")
+                  %li.mypage__nav__list--tab
+                    =link_to destroy_user_session_path, method: :delete, class: "mypage__nav__list--item" do
+                      ログアウト
+                      =icon('fas', 'chevron-right', class: "i")
+    .mypage__payment
+      %h2.credit_title クレジットカード情報入力
+      .creditcard
+        = form_tag(pay_creditcard_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+          .creditcard__label
+            .card
+              %label.card_information カード番号 
+              %a.check 必須
+          .creditcard__number
+            = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number",autocomplete: 'off'
+          .image
+            = image_tag src="https://web-jp-assets.mercdn.net/_next/static/images/visa-91c71914c6ae23d33f896e60bb1e3859.svg",size: "53x24",class:"image_tag"
+            = image_tag src="https://web-jp-assets.mercdn.net/_next/static/images/mastercard-8b5b68c12b7a2fc8619c71f49ef9209b.svg", size: "31x24",class:"image_tag"
+            = image_tag src="https://web-jp-assets.mercdn.net/_next/static/images/saison-550107415f39b81fa19e87c96486ba20.svg", size: "37x24",class:"image_tag"
+            = image_tag src="https://web-jp-assets.mercdn.net/_next/static/images/jcb-9ea981d20008c6545aa3afd1b3da9804.svg", size: "32x24",class:"image_tag"
+            = image_tag src="https://web-jp-assets.mercdn.net/_next/static/images/american_express-4df44c450653b0209850070ea5cf1264.svg", size: "35x24",class:"image_tag"
+            = image_tag src="https://web-jp-assets.mercdn.net/_next/static/images/dinersclub-3d52fbb4b39dc998f039571f3314bfc7.svg", size: "35x24",class:"image_tag"
+            = image_tag src="https://web-jp-assets.mercdn.net/_next/static/images/discover-879b0b1c9f9a30159f09e9ef492ad349.svg", size: "37x24",class:"image_tag"
+          .creditcard__label
+            .deadline
+              %label.card_information 有効期限
+              %a.check 必須
+          .choice
+            = select_tag "exp_month", options_from_collection_for_select(CreditcardMonth.all, :value, :name), id: "exp_month" ,class:"credit_month_select"
+            %span 月    
+            = select_tag "exp_year", options_from_collection_for_select(CreditcardYear.all, :value, :name), id: "exp_year",class:"credit_month_select"
+            %span.month 年
+          .creditcard__label
+            .code
+              %label.card_information セキュリティコード
+              %a.check 必須
+          = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
+          #card_token
+          = submit_tag "追加する", id: "token_submit", class: "submit"
+        .link
+          = link_to card_mypage_index_path, class: "back" do
+            もどる
+  = render "footer"
+  = render "sellbtn"
