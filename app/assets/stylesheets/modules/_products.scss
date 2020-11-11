@@ -336,8 +336,12 @@
           display: flex;
           justify-content: center;
           &__group {
+            &:hover{
+              opacity: 0.6;
+            }
             &__link {
               width: 220px;
+              text-decoration: none;
               &__images {
                 width: 220px;
                 height: 150px;

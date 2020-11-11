@@ -8,8 +8,8 @@
   &__image {
     line-height: 180px;
     margin: 0 auto;
-    width: 12%;
-    height: 12%;
+    width: 12rem;
+    height: 12rem;
   }
 }
 .images{
@@ -18,11 +18,11 @@
 }
 .purchase{
   margin: 0 auto;
-  width: 49%;
+  width: 45rem;
   height: 100%;
   background-color: white;
   &__confirm{
-    width: 50%;
+    width: 52%;
     margin: 0 auto;
     &__title{
       text-align: center;
@@ -196,7 +196,7 @@
   margin-top: 40px;
   padding-bottom: 41px;
   &__content{
-    margin-bottom: 30px;
+    margin-bottom: 1%;
     &__list{
       display: flex;
       justify-content: center;
@@ -217,7 +217,7 @@
   &__drscription{
     margin: 0 auto;
     &__logo{
-      width: 8%;
+      width: 9rem;
       margin: 0 auto;
       text-align: center;
     }

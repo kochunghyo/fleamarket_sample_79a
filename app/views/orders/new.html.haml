@@ -58,10 +58,10 @@
           .purchase__confirm__delivery__title 配送先
           .purchase__confirm__delivery__postcode
             〒#{current_user.address.post_code.to_s.insert(3, "-")}
-          .purchase__confirm__delivery__addres
-            = current_user.address.prefecture.name + current_user.address.city + current_user.address.house_number
+          .purchase__confirm__delivery__address
+            = current_user.address.prefecture.name + " " + current_user.address.city + " " + current_user.address.house_number + " " + current_user.address.building
           .purchase__confirm__delivery__name
-            = current_user.first_name + current_user.last_name
+            = current_user.first_name + " " + current_user.last_name
           .purchase__confirm__delivery__link
             = link_to '#', class: "purchase__confirm__delivery__link__btn" do
               = icon('fas', 'plus-circle',class: "purchase__confirm__delivery__link__icon")
