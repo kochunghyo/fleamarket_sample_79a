@@ -89,7 +89,7 @@
                     電話番号の確認
                     =icon('fas', 'chevron-right', class: "i")
                 %li.mypage__nav__list--tab
-                  =link_to destroy_user_session_path, method: :delete, class: "mypage__nav__list--item" do
+                  =link_to logout_mypage_index_path, class: "mypage__nav__list--item" do
                     ログアウト
                     =icon('fas', 'chevron-right', class: "i")
   %main.l-container.clearfix

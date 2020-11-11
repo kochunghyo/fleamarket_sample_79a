@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     collection do
       get 'card', to: 'mypage#card'
       get 'card/new', to: 'mypage#card_new'
+      get 'logout', to: 'mypage#logout'
     end
   end
 
