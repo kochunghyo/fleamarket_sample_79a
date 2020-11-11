@@ -41,25 +41,28 @@
           }
           &_body{
             margin: 16px 0 0;
-            ul{
+            &_lists{
               display: flex;
-              position: relative;
-              li{
+              &_top{
                 width: 560px;
                 margin: 0 auto;
                 img{
                   width: 100%;
                   vertical-align: bottom;
+                  object-fit: cover;
+                  height: 346px;
                 }
-                ul{
-                  margin-top: 10px;
-                  li{
-                    width: 25%;
-                    margin: 0 10px 0 0;
-                    img{
-                      object-fit: cover;
-                      height: 87px;
-                    }
+              }
+              &_list{
+                display: flex;
+                margin-top: 10px;
+                justify-content: center;
+                &_img{
+                  width: 25%;
+                  margin: 0 10px 0 0;
+                  img{
+                    object-fit: cover;
+                    height: 87px;
                   }
                 }
               }
