@@ -12,6 +12,7 @@ class CreditcardController < ApplicationController
       redirect_to action: "new"
     else
       customer = Payjp::Customer.create(
+      description: current_user.first_name + current_user.last_name,
       email: current_user.email,
       card: params['payjp-token'],
       metadata: {user_id: current_user.id}

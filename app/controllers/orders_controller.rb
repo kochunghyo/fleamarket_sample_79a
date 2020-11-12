@@ -36,6 +36,7 @@ class OrdersController < ApplicationController
       :amount => @product.price, 
       :customer => @card.customer_id, 
       :currency => 'jpy', 
+      :description => @product.name,
     )
 
       @product.update(sales_status: "sold_out")
