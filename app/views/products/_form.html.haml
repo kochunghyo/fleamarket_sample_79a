@@ -53,7 +53,7 @@
               必須
             .categorylist-select-wrapper
             .categorylist-select-wrapper__box
-              = f.collection_select :category_id, Category.roots, :id, :name, {class: 'categorylist-select-wrapper__box--select', id: 'parent_category'}
+              = f.collection_select :category_id, Category.roots, :id, :name, {prompt: "--"}, {class: 'categorylist-select-wrapper__box--select'}
           
           .product-detail_explanation_brand
             %label ブランド
