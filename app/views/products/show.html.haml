@@ -4,12 +4,26 @@
     %ul
       %li
         = link_to "#" , class: "category_link" do
-          テスト
+          FURIMA
       %li
         = icon('fas','angle-right',class: "i")
       %li
         = link_to "#" , class: "category_link" do
-          テスト
+          =@product.category.root.name
+      %li
+        = icon('fas','angle-right',class: "i")
+      %li
+        = link_to "#" , class: "category_link" do
+          =@product.category.parent.name
+      %li
+        = icon('fas','angle-right',class: "i")
+      %li
+        = link_to "#" , class: "category_link" do
+          =@product.category.name
+      %li
+        = icon('fas','angle-right',class: "i")
+      %li
+        =@product.name
   .main
     .main_content
       .main_content_left
@@ -47,7 +61,8 @@
                 %tbody
                   %tr
                     %th 出品者
-                    %td hoge
+                    %td
+                      = link_to @nickname
                   %tr
                     %th カテゴリー
                     %td
@@ -55,7 +70,7 @@
                         = @product.category.root.name
                         %br
                       = link_to "#" , class: "item_box_table_link" do
-                        = @product.category.name
+                        = @product.category.parent.name
                         %br
                       = link_to "#" , class: "item_box_table_link" do
                         = @product.category.name
@@ -69,17 +84,19 @@
                   %tr
                     %th 商品の状態
                     %td
+                      =@product.status.name
                   %tr
                     %th 配送料の負担
                     %td
+                      =@product.delivery_fee.name
                   %tr
                     %th 発送元の地域
                     %td
-                      = link_to "#" , class: "item_box_table_link" do
-                        岩手県
+                      =@product.shipping_area.name
                   %tr
                     %th 発送日の目安
                     %td
+                      =@product.shipping_day.name
             .item_box_optional_area
               %ul
                 %li.optional_area_btn
@@ -124,7 +141,8 @@
               = icon('fas','angle-right',class: "i")
         .related_items
           = link_to "#" , class: "related_items_link" do
-            ベビー・キッズをもっと見る
+            =@product.category.root.name
+            をもっと見る
           .product_lists
             .product_list
               = link_to "#" , class: "product_list_link" do
