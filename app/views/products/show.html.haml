@@ -10,16 +10,18 @@
       %li
         = link_to "#" , class: "category_link" do
           =@product.category.root.name
-      %li
-        = icon('fas','angle-right',class: "i")
-      %li
-        = link_to "#" , class: "category_link" do
-          =@product.category.parent.name
-      %li
-        = icon('fas','angle-right',class: "i")
-      %li
-        = link_to "#" , class: "category_link" do
-          =@product.category.name
+      - if @product.category.depth == 2
+        %li
+          = icon('fas','angle-right',class: "i")
+        %li
+          = link_to "#" , class: "category_link" do
+            =@product.category.parent.name
+      - if @product.category.depth == 1 || @product.category.depth == 2
+        %li
+          = icon('fas','angle-right',class: "i")
+        %li
+          = link_to "#" , class: "category_link" do
+            =@product.category.name
       %li
         = icon('fas','angle-right',class: "i")
       %li
@@ -70,10 +72,10 @@
                         = @product.category.root.name
                         %br
                       = link_to "#" , class: "item_box_table_link" do
-                        = @product.category.parent.name
+                        = @product.category.parent.name if @product.category.depth == 2
                         %br
                       = link_to "#" , class: "item_box_table_link" do
-                        = @product.category.name
+                        = @product.category.name if @product.category.depth == 2 || @product.category.depth == 1
                   %tr
                     %th ブランド
                     %td
