@@ -57,7 +57,7 @@
               .categorylist-select-wrapper
               .categorylist-select-wrapper__box
                 = f.collection_select :category_id, Category.roots, :id, :name, {prompt: "--"}, {class: 'categorylist-select-wrapper__box--select'}
-            
+
             .product-detail_explanation_brand
               %label ブランド
               %span.uptoyou  任意
@@ -88,6 +88,7 @@
                 %span.essential
                   必須
             = f.collection_select :shipping_area_id, ShippingArea.all, :id, :name, {prompt: "--"},{class: 'delivery-info_data_prefecture'}
+
 
             .delivery-info_data_box3
               .delivery-info_data_box3_shipping-days
