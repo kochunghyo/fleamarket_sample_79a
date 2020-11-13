@@ -43,7 +43,6 @@ class ProductsController < ApplicationController
   end
 
   def update
-    binding.pry
     if @product.update(product_params)
       redirect_to root_path
     else
