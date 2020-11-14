@@ -116,7 +116,7 @@
                 = f.label '生年月日', class: "label-name"
                 %span.must
                   必須
-              = f.date_select :birthday, {start_year: 1900, end_year: 2100}, class: "birthday"
+              = f.date_select :birthday, {start_year: 1900, end_year: 2100, prompt: "--"}, {class: "birthday"}
               - if @user.errors.any?
                 .errors_explanation
                   %ul
