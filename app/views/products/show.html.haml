@@ -38,6 +38,9 @@
               %ul.item_box_body_lists
                 %li.item_box_body_lists_top
                   = image_tag @product.images.first.image.url
+                  -if @product.sales_status == 'sold_out'
+                    .sold_out__box1
+                      .sold_out__box1__text SOLD
                   %ul.item_box_body_lists_list
                     - @product.images.each do |image|
                       %li.item_box_body_lists_list_img
