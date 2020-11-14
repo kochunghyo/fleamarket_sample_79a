@@ -36,8 +36,6 @@ class ProductsController < ApplicationController
 
   def show
     @parents = Category.all.order("id ASC").limit(733)
-    @user = User.find(params[:id])
-    @nickname = @user.nickname
   end
 
   def edit
