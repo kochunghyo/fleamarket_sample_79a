@@ -45,6 +45,9 @@ $(function(){
         $('#grandchildren_wrapper').remove();
         $('#size_wrapper').remove();
         $('#brand_wrapper').remove();
+        $('#child').remove();
+        $('#grandchildren_wrapper').remove();
+        $('#grandchild').remove();
         var insertHTML = '';
         children.forEach(function(child){
           insertHTML += appendOption(child);
@@ -59,6 +62,9 @@ $(function(){
       $('#grandchildren_wrapper').remove();
       $('#size_wrapper').remove();
       $('#brand_wrapper').remove();
+      $('#child').remove();
+      $('#grandchildren_wrapper').remove();
+      $('#grandchild').remove();
     }
   });
   // 子カテゴリー選択後のイベント
@@ -90,6 +96,42 @@ $(function(){
       $('#grandchildren_wrapper').remove(); //子カテゴリーが初期値になった時、孫以下を削除する
       $('#size_wrapper').remove();
       $('#brand_wrapper').remove();
+      $('#grandchild').remove();
+    }
+  });
+  $('#child').on('change', function(){
+    var parentCategory = document.getElementById('child').value; //選択された親カテゴリーの名前を取得
+    if (parentCategory != "---"){ //親カテゴリーが初期値でないことを確認
+      $.ajax({
+        url: '/products/get_category_children',
+        type: 'GET',
+        data: { parent_id: parentCategory },
+        dataType: 'json'
+      })
+      .done(function(grandchildren){
+        $('#grandchildren_wrapper').remove();
+        $('#size_wrapper').remove();
+        $('#brand_wrapper').remove();
+        $('#grandchild').remove();
+        $('#grandchild_category').remove();
+        var insertHTML = '';
+        grandchildren.forEach(function(grandchild){
+          insertHTML += appendOption(grandchild);
+        });
+        if (insertHTML != ''){
+          appendGrandchidrenBox(insertHTML);
+        }
+      })
+      .fail(function(){
+        alert('カテゴリー取得に失敗しました');
+      })
+    }else{
+      $('#children_wrapper').remove(); //親カテゴリーが初期値になった時、子以下を削除する
+      $('#grandchildren_wrapper').remove();
+      $('#size_wrapper').remove();
+      $('#brand_wrapper').remove();
+      $('#grandchild').remove();
+      $('#grandchild_category').remove();
     }
   });
 });
