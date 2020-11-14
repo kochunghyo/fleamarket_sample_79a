@@ -55,14 +55,14 @@
               %span.essential
                 必須
               .categorylist-select-wrapper
-              .categorylist-select-wrapper__box
+              .categorylist-select-wrapper__box1
                 -if @product.category.depth == 2 
-                  = f.collection_select :category_id, @product.category.parent.parent.siblings, :id , :name, {include_blank: "--", selected: @product.category.parent.parent.id},{class: 'categorylist-select-wrapper__box--select'} 
-                  = f.collection_select :category_id, @product.category.parent.siblings, :id, :name, {include_blank: "--", selected:  @product.category.parent.id},{class: 'categorylist-select-wrapper__box--select',id:'child'} 
-                  = f.collection_select :category_id, @product.category.siblings, :id , :name, {include_blank: "--", selected: @product.category_id},{class: 'categorylist-select-wrapper__box--select',id: 'grandchild'} 
+                  = f.collection_select :category_id, @product.category.parent.parent.siblings, :id , :name, {include_blank: "---", selected: @product.category.parent.parent.id},{class: 'categorylist-select-wrapper__box1--select'} 
+                  = f.collection_select :category_id, @product.category.parent.siblings, :id, :name, {include_blank: "--", selected:  @product.category.parent.id},{class: 'categorylist-select-wrapper__box1--select',id:'child'} 
+                  = f.collection_select :category_id, @product.category.siblings, :id , :name, {include_blank: "---", selected: @product.category_id},{class: 'categorylist-select-wrapper__box1--select',id: 'grandchild'} 
                 -elsif @product.category.depth == 1
-                  = f.collection_select :category_id, @product.category.parent.siblings, :id , :name, {include_blank: "--", selected: @product.category.parent.id},{class: 'categorylist-select-wrapper__box--select'} 
-                  = f.collection_select :category_id, @product.category.siblings, :id, :name, {include_blank: "--", selected:  @product.category.id},{class: 'categorylist-select-wrapper__box--select',id:'child'} 
+                  = f.collection_select :category_id, @product.category.parent.siblings, :id , :name, {include_blank: "---", selected: @product.category.parent.id},{class: 'categorylist-select-wrapper__box1--select'} 
+                  = f.collection_select :category_id, @product.category.siblings, :id, :name, {include_blank: "---", selected:  @product.category.id},{class: 'categorylist-select-wrapper__box1--select',id:'child'} 
 
             .product-detail_explanation_brand
               %label ブランド
