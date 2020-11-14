@@ -89,4 +89,8 @@
   border: solid 1px #3CCACE;
   border-radius: 3px;
   padding: 5px;
+  &:hover{
+    border: solid 2px #3CCACE;
+    margin: -1px;
+  }
 }
